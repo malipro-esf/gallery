@@ -1,0 +1,42 @@
+
+@font-face {
+    font-family: persianFont;
+    src: url('../../fonts/IRANYekan/woff/iranyekanwebbold(fanum).woff');
+}
+
+@font-face {
+    font-family: englishFont;
+    src: url('../../fonts/lora/Lora-Regular.ttf');
+}
+
+body {
+    font-family: persianFont;
+}
+
+.img-list {
+    width: 50px;
+    height: auto;
+}
+
+.div-title {
+    background: lightslategray;
+    color: white;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+.div-detail {
+    background: #dadada;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+.row-details {
+    background-color: #eeeeee;
+    padding: 10px;
+    margin-bottom: 10px
+}
+.l-red{
+    background: #FFCCBC ;
+}
+.antiquewhite {
+    background: antiquewhite !important;
+}
