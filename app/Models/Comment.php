@@ -11,12 +11,13 @@ class Comment extends Model
 
     protected $fillable = [
         'artwork_id',
-        'user_name',
+        'user_id',
+        'user_fullname',
         'email',
         'message',
+        'reply',
         'ip_address',
         'agent_system',
-        'user_id',
         'verification_status'
     ];
 
@@ -24,4 +25,11 @@ class Comment extends Model
     {
         return $this->belongsTo(Artwork::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }

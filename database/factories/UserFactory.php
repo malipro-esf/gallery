@@ -2,11 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {
+    protected $model = User::class;
     /**
      * Define the model's default state.
      *
@@ -19,25 +22,38 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'mobile' => $this->faker->numerify('###########'),
             'confirmation_code'=> $this->faker->randomNumber(5),
-            'type' => 'user',
+            'type' => Arr::random(['admin', 'user']),
             'confirmation_status' => '1',
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'password' => '$2y$10$vAUDmkFQZqUdVmu./PtuGujgoybkTFHj4Q6v2x4W.Mj.jxe.R8dPK', // password
         ];
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * Indicate that the model's type should be user.
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function unverified()
+    public function user()
     {
         return $this->state(function (array $attributes) {
             return [
-                'email_verified_at' => null,
+                'type' => 'user',
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the model's type should be admin.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function admin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'type' => 'admin',
             ];
         });
     }

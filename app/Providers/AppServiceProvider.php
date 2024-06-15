@@ -49,6 +49,16 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\ArtworkRepositoryInterface',
             'App\Repositories\ArtworkRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\ContactRepositoryInterface',
+            'App\Repositories\ContactRepository'
+        );
+
+        $this->app->bind(
+            'App\Repositories\SettingsRepositoryInterface',
+            'App\Repositories\SettingsRepository'
+        );
     }
 
     /**

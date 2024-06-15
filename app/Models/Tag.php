@@ -17,6 +17,6 @@ class Tag extends Model
 
     public function artworks()
     {
-        return $this->hasMany(ArtworkTag::class);
+        return $this->belongsToMany(Artwork::class);
     }
 }

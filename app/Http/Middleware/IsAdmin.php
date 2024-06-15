@@ -19,6 +19,7 @@ class IsAdmin
     {
         if(Auth::user() && Auth::user()->type=='admin')
             return $next($request);
+
         return redirect()->route('login')->with('error');
     }
 }

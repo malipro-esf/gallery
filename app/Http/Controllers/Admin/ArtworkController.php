@@ -86,7 +86,6 @@ class ArtworkController extends Controller
     public function edit(Artwork $artwork)
     {
         return $this->repository->edit($artwork);
-
     }
 
     /**
@@ -112,6 +111,9 @@ class ArtworkController extends Controller
      */
     public function destroy(Artwork $artwork)
     {
-        return $this->repository->delete($artwork);
+        $this->repository->delete($artwork);
+
+        return back()->with('success-message','delete_successful');
+
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtworkStylesTable extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateArtworkStylesTable extends Migration
      */
     public function up()
     {
-        Schema::create('artwork_styles', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->integer('artwork_id');
-            $table->integer('style_id');
+            $table->string('title_persian')->unique();
+            $table->string('title_english')->unique();
+            $table->text('text_persian');
+            $table->text('text_english');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateArtworkStylesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artwork_styles');
+        Schema::dropIfExists('settings');
     }
 }

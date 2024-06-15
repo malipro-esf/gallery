@@ -25,6 +25,8 @@ class Artwork extends Model
         'description_persian',
         'price_rials',
         'price_usd',
+        'sign',
+        'frame',
         'inventory_status'
     ];
 
@@ -61,6 +63,11 @@ class Artwork extends Model
         return $this->persianName;
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
@@ -81,7 +88,7 @@ class Artwork extends Model
 
     public function tags()
     {
-        return $this->hasMany(ArtworkTag::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     //  should use hasOne because there is just one instance of each artwork
@@ -108,5 +115,6 @@ class Artwork extends Model
         return !! $this->favorites()->where('user_id', Auth::id())
             ->count();
     }
+
 
 }

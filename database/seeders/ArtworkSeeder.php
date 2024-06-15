@@ -14,6 +14,6 @@ class ArtworkSeeder extends Seeder
      */
     public function run()
     {
-        Artwork::factory()->count(1)->create();
+        Artwork::factory()->count(5)->create();
     }
 }

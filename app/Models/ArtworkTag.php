@@ -9,6 +9,8 @@ class ArtworkTag extends Model
 {
     use HasFactory;
 
+    protected $table = 'artwork_tag';
+
     protected $fillable = [
         'artwork_id',
         'tag_id'
@@ -17,6 +19,11 @@ class ArtworkTag extends Model
     public function tag()
     {
         return $this->belongsTo(Tag::class);
+    }
+
+    public function artwork()
+    {
+        return $this->belongsTo(Artwork::class);
     }
 
 }

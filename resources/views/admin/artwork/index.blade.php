@@ -64,7 +64,13 @@
                 </div>
             </div>
         </div>
-        <!-- .modal -->
+        <div>
+            {!! $artworks->links() !!}
+        </div>
+
+
+
+    <!-- .modal -->
         <div id="description-modal" class="modal fade animate"
              data-backdrop="true">
             <div class="modal-dialog" id="animate">

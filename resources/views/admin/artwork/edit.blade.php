@@ -127,6 +127,28 @@
                         <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="sign">{{__('titles.sign')}}</label>
+                                    <select class="form-control" id="sign" name="sign">
+                                        <option {{old('sign')=='0'?'selected':''}} value="0">{{__('titles.has it')}}</option>
+                                        <option {{old('sign')=='1'?'selected':''}} value="1">{{__('titles.does not have')}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="frame">{{__('titles.frame')}}</label>
+                                    <select class="form-control" id="frame" name="frame">
+                                        <option {{old('frame')=='1'?'selected':''}} value="0">{{__('titles.has it')}}</option>
+                                        <option {{old('frame')=='0'?'selected':''}} value="1">{{__('titles.does not have')}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row p-t-20 l-red">
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label for="styles">{{__('titles.style')}}</label>
                                     <select class=" form-control" multiple="multiple" required name="styles[]" id="styles">
                                         @foreach($categories->where('type','style') as $style)
@@ -147,7 +169,7 @@
                             </div>
                         </div>
 
-                        <div class="row p-t-20 l-red">
+                        <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="attrs">{{__('titles.attributes')}}</label>
@@ -164,7 +186,7 @@
                             </div>
                         </div>
 
-                        <div class="row p-t-20">
+                        <div class="row p-t-20 l-red">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="tags">{{__('titles.tags')}}</label>
@@ -186,7 +208,7 @@
                             </div>
                         </div>
 
-                        <div class="row p-t-20 l-red">
+                        <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="des-persian">{{__('titles.persian description')}}</label>

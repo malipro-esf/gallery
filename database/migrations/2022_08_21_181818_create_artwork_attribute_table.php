@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtworkTechniquesTable extends Migration
+class CreateArtworkAttributeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateArtworkTechniquesTable extends Migration
      */
     public function up()
     {
-        Schema::create('artwork_techniques', function (Blueprint $table) {
-            $table->id();
+        Schema::create('artwork_attribute', function (Blueprint $table) {
+            $table->integer('attributevalue_id');
             $table->integer('artwork_id');
-            $table->integer('technique_id');
+            $table->primary(['attributevalue_id','artwork_id']);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateArtworkTechniquesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artwork_techniques');
+        Schema::dropIfExists('artwork_attribute');
     }
 }

@@ -1,0 +1,8 @@
+database: 
+ user: cp56040_gallery
+ pass: J5D)R_Ca9l9?
+
+ftp:
+ FTP Username: gallery@mariart.ir
+ FTP server: ftp.mariart.ir
+ pass: GW_fveb,!j&K

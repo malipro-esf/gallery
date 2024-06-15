@@ -12,7 +12,7 @@ class BillItem extends Model
 
     protected $fillable = [
         'bill_id',
-        'artwork_id'
+        'artwork_id',
     ];
 
     protected $artworks = [];

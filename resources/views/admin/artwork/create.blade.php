@@ -29,7 +29,7 @@
                                     <label for="english-name">{{__('titles.english name')}}</label>
                                     <input type="text" maxlength="191" required class="form-control" value="{{old('name_english')}}"
                                            name="name_english" id="english-name"
-                                           placeholder="{{__('titles.enter name in persian')}}">
+                                           placeholder="{{__('titles.enter name in english')}}">
                                     <small id="emailHelp" class="form-text text-muted"></small>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="price-rials">{{__('titles.rials price')}}</label>
-                                    <input type="text" maxlength="20"  class="form-control" value="{{old('price_rials')}}"
+                                    <input type="number" min="0" maxlength="20"  class="form-control" value="{{old('price_rials')}}"
                                            name="price_rials" id="price_rials"
                                            placeholder="{{__('titles.enter price in rials')}}">
                                     <small id="emailHelp" class="form-text text-muted"></small>
@@ -70,7 +70,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="price-usd">{{__('titles.usd price')}}</label>
-                                    <input type="text" maxlength="20"  class="form-control" value="{{old('price_usd')}}"
+                                    <input type="number" min="0" maxlength="20"  class="form-control" value="{{old('price_usd')}}"
                                            name="price_usd" id="price-usd"
                                            placeholder="{{__('titles.enter price in usd')}}">
                                     <small id="emailHelp" class="form-text text-muted"></small>
@@ -124,10 +124,34 @@
                         <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="sign">{{__('titles.sign')}}</label>
+                                    <select class="form-control" id="sign" name="sign">
+                                        <option {{old('sign')=='0'?'selected':''}} value="0">{{__('titles.has it')}}</option>
+                                        <option {{old('sign')=='1'?'selected':''}} value="1">{{__('titles.does not have')}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="frame">{{__('titles.frame')}}</label>
+                                    <select class="form-control" id="frame" name="frame">
+                                        <option {{old('frame')=='1'?'selected':''}} value="0">{{__('titles.has it')}}</option>
+                                        <option {{old('frame')=='0'?'selected':''}} value="1">{{__('titles.does not have')}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row p-t-20 l-red">
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label for="styles">{{__('titles.style')}}</label>
                                     <select class="form-control" multiple="multiple" required name="styles[]" id="styles">
                                         @foreach($categories->where('type','style') as $style)
-                                        <option {{old('styles')?in_array($style->id,old('styles'))?'selected':"":''}}  value="{{$style->id}}">{{$locale=='fa'?$style->name_persian:$style->name_english}}</option>
+                                        <option {{old('styles')?in_array($style->id,old('styles'))?'selected':"":''}}
+                                                value="{{$style->id}}">{{$locale=='fa'?$style->name_persian:$style->name_english}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -144,7 +168,11 @@
                             </div>
                         </div>
 
-                        <div class="row p-t-20 l-red">
+                        <div class="row p-t-20">
+
+                        </div>
+
+                        <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label >{{__('titles.attributes')}}</label>
@@ -159,9 +187,6 @@
                                     @endforeach
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="tags">{{__('titles.tags')}}</label>
@@ -191,7 +216,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row l-red">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">

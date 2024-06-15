@@ -24,8 +24,8 @@ class ArtworkStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_persian' => 'required',
-            'name_english' => 'required',
+            'name_persian' => 'required|unique:artworks,name_persian',
+            'name_english' => 'required|unique:artworks,name_english',
             'idea_type' => 'required',
             'paint_type' => 'required',
             'year_created' => 'nullable',
@@ -37,6 +37,7 @@ class ArtworkStoreRequest extends FormRequest
             'description_english' => 'nullable',
             'styles' => 'required|Array',
             'techniques' => 'required|Array',
+            'tags' => 'required|Array',
             'images' => 'required|Array',
             'price_rials' => 'nullable',
             'price_usd' => 'nullable',

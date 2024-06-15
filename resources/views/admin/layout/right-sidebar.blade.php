@@ -95,7 +95,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="icon-Temple"></i>
+                        <i class="icon-Face-Style"></i>
                         <span class="hide-menu">{{__('titles.style')}} </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
@@ -116,7 +116,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="icon-Temple"></i>
+                        <i class="icon-Bulleted-List"></i>
                         <span class="hide-menu">{{__('titles.attributes')}} </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
@@ -143,7 +143,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="icon-Temple"></i>
+                        <i class="icon-User"></i>
                         <span class="hide-menu">{{__('titles.user')}} </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
@@ -164,7 +164,7 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="icon-Temple"></i>
+                        <i class="icon-Billing"></i>
                         <span class="hide-menu">{{__('titles.bill')}} </span>
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level">
@@ -184,11 +184,50 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="icon-Settings-Window"></i>
+                        <span class="hide-menu">{{__('titles.settings')}} </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item">
+                            <a href="{{route('settings.index')}}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu">{{__('titles.list')}} </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('settings.create')}}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu">{{__('titles.create')}} </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                        href="{{route('tag.index')}}" class="logout-link"
                        aria-expanded="false">
-                        <i class="mdi mdi-directions"></i>
+                        <i class="mdi mdi-tag"></i>
                         <span class="hide-menu">{{__('titles.tag')}}</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                       href="{{route('support-ticket.index')}}" class="logout-link"
+                       aria-expanded="false">
+                        <i class="mdi mdi-ticket"></i>
+                        <span class="hide-menu">{{__('titles.support ticket')}}</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                       href="{{route('contact.index')}}" class="logout-link"
+                       aria-expanded="false">
+                        <i class="mdi mdi-contacts"></i>
+                        <span class="hide-menu">{{__('titles.Contact Us')}}</span>
                     </a>
                 </li>
 
@@ -196,7 +235,7 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                        href="{{route('comment.index')}}" class="logout-link"
                        aria-expanded="false">
-                        <i class="mdi mdi-directions"></i>
+                        <i class="mdi mdi-comment"></i>
                         <span class="hide-menu">{{__('titles.comments')}}</span>
                     </a>
                 </li>

@@ -16,12 +16,14 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->integer('artwork_id');
-            $table->string('user_name');
-            $table->string('email')->unique();
+            $table->string('user_fullname');
+            $table->integer('user_id')->nullable();
+            $table->string('email');
             $table->text('message');
+            $table->text('reply');
             $table->text('ip_address')->nullable();
             $table->text('user_agent')->nullable();
-            $table->enum('verification_status',['0','1']);
+            $table->enum('verification_status',['0','1'])->default('0');
             $table->timestamps();
         });
     }

@@ -38,7 +38,6 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         return $this->repository->create($request);
-
     }
 
     /**

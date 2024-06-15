@@ -2,10 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Address;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AddressFactory extends Factory
 {
+    protected $model = Address::class;
     /**
      * Define the model's default state.
      *
@@ -14,7 +17,7 @@ class AddressFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => rand(1,10),
+            'user_id' => User::all()->random()->id,
             'city_id' => rand(1,100),
             'address' => $this->faker->address(),
             'phone' => $this->faker->phoneNumber(),

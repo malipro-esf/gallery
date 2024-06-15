@@ -15,8 +15,8 @@ class CreateArtworksTable extends Migration
     {
         Schema::create('artworks', function (Blueprint $table) {
             $table->id();
-            $table->string('name_persian');
-            $table->string('name_english');
+            $table->string('name_persian')->unique();
+            $table->string('name_english')->unique();
             $table->string('subject_persian')->nullable();
             $table->string('subject_english')->nullable();
             $table->text('statement_persian')->nullable();
@@ -29,6 +29,8 @@ class CreateArtworksTable extends Migration
             $table->string('price_rials')->nullable();
             $table->string('price_usd')->nullable();
             $table->enum('inventory_status',['sold','exist'])->default('exist');
+            $table->enum('frame',['0','1']);
+            $table->enum('sign',['0','1']);
             $table->softDeletes();
             $table->timestamps();
         });

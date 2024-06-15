@@ -8,6 +8,10 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
+                    @if(auth()->check() && auth()->user()->type=='admin')
+                        <a href="#">Just for admin!</a>
+                    @endif
+
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

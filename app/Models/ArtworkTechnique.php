@@ -14,6 +14,8 @@ class ArtworkTechnique extends Model
         'technique_id'
     ];
 
+    protected $table = 'artwork_technique';
+
     public function artwork()
     {
         return $this->belongsTo(Artwork::class);

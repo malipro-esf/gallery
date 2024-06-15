@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtworkTagsTable extends Migration
+class CreateArtworkTechniqueTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateArtworkTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('artwork_tags', function (Blueprint $table) {
-            $table->id();
+        Schema::create('artwork_technique', function (Blueprint $table) {
             $table->integer('artwork_id');
-            $table->integer('tag_id');
+            $table->integer('technique_id');
+            $table->primary(['artwork_id','technique_id']);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateArtworkTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artwork_tags');
+        Schema::dropIfExists('artwork_technique');
     }
 }

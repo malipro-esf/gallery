@@ -14,10 +14,10 @@ class CreateViewsTable extends Migration
     public function up()
     {
         Schema::create('views', function (Blueprint $table) {
-            $table->id();
             $table->integer('artwork_id');
             $table->string('ip_address');
             $table->string('agent_system');
+            $table->primary(['artwork_id','ip_address']);
             $table->timestamps();
         });
     }

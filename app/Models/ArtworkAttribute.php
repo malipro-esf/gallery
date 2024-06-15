@@ -10,6 +10,7 @@ class ArtworkAttribute extends Model
     use HasFactory;
 
     protected $fillable = ['artwork_id','attributevalue_id'];
+    protected $table = 'artwork_attribute';
 
     public function artwork()
     {

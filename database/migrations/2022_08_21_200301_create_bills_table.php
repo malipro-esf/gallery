@@ -22,7 +22,7 @@ class CreateBillsTable extends Migration
             $table->integer('tax_cost')->nullable();
             $table->integer('total_price');
             $table->enum('verification_status', ['pending','accepted','rejected'])->default('pending');
-            $table->enum('post_status', ['readying','dpo','dc']); // dpo=delivered post office -- dc=delivered customer
+            $table->enum('post_status', ['readying','dpo','dc'])->default('readying'); // dpo=delivered post office -- dc=delivered customer
             $table->string('tracking_code')->nullable();
             $table->text('user_description')->nullable();
             $table->softDeletes();

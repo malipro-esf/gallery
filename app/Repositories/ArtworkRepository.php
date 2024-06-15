@@ -15,7 +15,7 @@ class ArtworkRepository implements ArtworkRepositoryInterface
 {
     public function getAll($data = null)
     {
-        return Artwork::with('images', 'styles', 'techniques')->get();
+        return Artwork::with('images', 'styles', 'techniques')->paginate(15);
     }
 
     public function create()
@@ -63,7 +63,6 @@ class ArtworkRepository implements ArtworkRepositoryInterface
                 ]);
         }
 
-        return view('admin.artwork.index')->with('success-message', 'create_successful');
     }
 
     public function show(Artwork $artwork)
@@ -151,7 +150,6 @@ class ArtworkRepository implements ArtworkRepositoryInterface
             return back()->with('error-message','sold can not delete');
 
         $artwork->delete();
-        return back()->with('success-message','delete_successful');
     }
 
 }

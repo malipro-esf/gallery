@@ -14,6 +14,8 @@ class ArtworkStyle extends Model
         'style_id'
     ];
 
+    protected $table = 'artwork_style';
+
     public function artwork()
     {
         return $this->belongsTo(Artwork::class);

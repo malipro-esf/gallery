@@ -20,16 +20,10 @@
                         </div>
                         <div class="form-group">
                             <label for="english-name">{{__('titles.english name')}}</label>
-                            <input type="text" required class="form-control" value="{{old('name_english')}}" name="name_english" id="english-name" placeholder="{{__('titles.enter name in persian')}}">
+                            <input type="text" required class="form-control" value="{{old('name_english')}}" name="name_english" id="english-name" placeholder="{{__('titles.enter name in english')}}">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
-{{--                        <div class="form-group">--}}
-{{--                            <label for="type">{{__('titles.type')}}</label>--}}
-{{--                            <select class="form-control" id="type" name="type">--}}
-{{--                                <option {{$type=='style'?'selected':''}} value="style">{{__('titles.style')}}</option>--}}
-{{--                                <option {{$type=='technique'?'selected':''}} value="technique">{{__('titles.technique')}}</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
+
                         <div class="form-group">
                             <label for="image">{{__('titles.image')}}</label>
                             <input type="file" name="image" id="image" accept="image" class="form-control">
