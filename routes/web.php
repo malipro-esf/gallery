@@ -36,11 +36,10 @@ use Illuminate\Support\Facades\Route;
 //})->where('any', '.*');
 
 //Route::get('/', [HomeController::class, 'home']);
-Auth::routes(['register' => true]);
+//Auth::routes(['register' => true]);
 
 Route::get('/', function (){
-//    echo Hash::make('password');
-    return view ('home');
+    return view ('user.index');
 });
 
 Route::get('/login', function (){
