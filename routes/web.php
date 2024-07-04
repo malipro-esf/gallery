@@ -10,14 +10,12 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\LocaleController;
 use App\Http\Controllers\Admin\ProposedPriceController;
-use App\Http\Controllers\Admin\SendNewArtworkEmailController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SupportTicketController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleController;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,12 +29,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/{any}', function () {
-//    return view('user.home');
-//})->where('any', '.*');
-
-//Route::get('/', [HomeController::class, 'home']);
-//Auth::routes(['register' => true]);
+Auth::routes(['register' => true]);
 
 Route::get('/', function (){
     return view ('user.index');
@@ -70,7 +63,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin' ], function () {
 
 });
 
-//Auth::routes();
 
 //for tdd
 Route::get('single/{artwork}', [SingleController::class, 'index'])->name('single');

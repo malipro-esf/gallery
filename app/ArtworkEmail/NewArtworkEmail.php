@@ -15,7 +15,7 @@ class NewArtworkEmail
             ->delay(now()->addSeconds(2));
 
         dispatch($job);
-        echo "Mail send successfully !!";
+        echo "Mail sent successfully !!";
     }
 
 }
