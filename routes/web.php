@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\Admin\ArtworkController;
 use App\Http\Controllers\Admin\AttributeController;
 use App\Http\Controllers\Admin\AttributeValueController;
@@ -14,9 +15,9 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SupportTicketController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => true]);
 
-Route::get('/', function (){
-    return view ('user.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', function (){
     return view('auth.login');
@@ -67,7 +66,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin' ], function () {
 //for tdd
 Route::get('single/{artwork}', [SingleController::class, 'index'])->name('single');
 Route::post('single/{artwork}/comment', [SingleController::class, 'comment'])->name('single.comment');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // for test
 Route::get('/test', function (){
