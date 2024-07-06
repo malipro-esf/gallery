@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\Admin\ArtworkController;
 use App\Http\Controllers\Admin\AttributeController;
 use App\Http\Controllers\Admin\AttributeValueController;
@@ -9,13 +8,14 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\IndexController;
-use App\Http\Controllers\Admin\LocaleController;
 use App\Http\Controllers\Admin\ProposedPriceController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SupportTicketController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\SingleController;
+use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +33,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['register' => true]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
+
 
 Route::get('/login', function (){
     return view('auth.login');
@@ -55,7 +57,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin' ], function () {
     Route::resource('settings',SettingsController::class);
 
     Route::get('dashboard', [IndexController::class, 'index'])->name('dashboard');
-    Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
+    Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('admin.set.locale');
     Route::get('contact/index', [ContactController::class, 'index'])->name('contact.index');
     Route::post('contact/reply', [ContactController::class, 'reply'])->name('contact.reply');
     //Route::get('send-new-artwork-email',[SendNewArtworkEmailController::class,'send'])->name('send.new.art.email');

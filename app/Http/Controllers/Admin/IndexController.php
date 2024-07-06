@@ -21,4 +21,6 @@ class IndexController extends Controller
 
         return view('admin.dashboard.index',compact('usersCount','billsCount','artsCount'));
     }
+
+
 }

@@ -378,9 +378,9 @@
                         <i class="flag-icon flag-icon-{{$setFlag?:'ir'}} font-18"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right  animated bounceInDown" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" onclick="setBodyFont(this)" data-id="persian" href="{{route('set.locale',['locale' => 'fa'])}}">
+                        <a class="dropdown-item" onclick="setBodyFont(this)" data-id="persian" href="{{route('admin.set.locale',['locale' => 'fa'])}}">
                             <i class="flag-icon flag-icon-ir"></i>{{__('titles.Persian')}}</a>
-                        <a class="dropdown-item" onclick="setBodyFont(this)" data-id="english" href="{{route('set.locale',['locale' => 'en'])}}">
+                        <a class="dropdown-item" onclick="setBodyFont(this)" data-id="english" href="{{route('admin.set.locale',['locale' => 'en'])}}">
                             <i class="flag-icon flag-icon-us"></i>English</a>
                     </div>
                 </li>

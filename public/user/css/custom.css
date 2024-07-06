@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Iranian Sans';
+    src: url("/user/fonts/Iranian Sans.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'danstevis';
+    src: url("/user/fonts/danstevis.otf")  format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.header-flag {
+    display: inline-block !important;
+    width: auto !important;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529  !important;;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+#ul-nav-menu{
+    display: flex !important;
+}
+.persian-style {
+    direction: rtl;
+    font-family: 'Iranian Sans', sans-serif;
+}
+
+.english-style {
+    direction: ltr;
+}

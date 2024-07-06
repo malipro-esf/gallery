@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 
 class LocaleController extends Controller
@@ -13,6 +12,6 @@ class LocaleController extends Controller
         session()->put('locale', $locale);
         session()->save();
 
-        return back();
+        return back()->with('locale', $locale);
     }
 }

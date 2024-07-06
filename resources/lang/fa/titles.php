@@ -111,8 +111,6 @@ return [
     'enter statement in english' => 'بیانیه را به انگلیسی وارد کنید',
     'enter statement in persian' => 'بیانیه را به فارسی وارد کنید',
     'idea' => 'ایده',
-    'persian description' => 'توضیحات فارسی',
-    'english description' => 'توضیحات انگلیسی',
     'enter description in persian' => 'توضیحات را به فارسی وارد کنید',
     'enter description in english' => 'توضیحات را به انگلیسی وارد کنید',
     'show' => 'نمایش',
@@ -132,7 +130,11 @@ return [
     'has it' => 'دارد',
     'does not have' => 'ندارد',
     'sign' => 'امضا',
-    'frame' => 'قاب'
-
-
+    'frame' => 'قاب',
+    'language' => 'زبان',
+    'home' => 'خانه',
+    'art works' => 'آثار هنری',
+    'contact me' => 'ارتباط با من',
+    'about mary' => 'در مورد مریم',
+    'blog' => 'بلاگ',
 ];

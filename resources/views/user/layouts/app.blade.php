@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{asset('user/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('user/css/custom.css')}}">
 </head>
 <body>
 @include('user.layouts.header')
@@ -77,6 +78,7 @@
 <script src="{{asset('user/js/parallax.min.js')}}"></script>
 <script src="{{asset('user/js/mail-script.js')}}"></script>
 <script src="{{asset('user/js/main.js')}}"></script>
+<script src="{{asset('user/js/set-header-menu-persian-order.js')}}"></script>
 
 </body>
 </html>

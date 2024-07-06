@@ -128,7 +128,12 @@ return [
     'has it' => 'Has it',
     'does not have' => 'Does not have',
     'sign' => 'Sign',
-    'frame' => 'Frame'
-
+    'frame' => 'Frame',
+    'language' => 'Language',
+    'home' => 'Home',
+    'art works' => 'Art Works',
+    'contact me' => 'Contact Me',
+    'about mary' => 'About Mary',
+    'blog' => 'Blog',
 
 ];
