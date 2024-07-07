@@ -31,8 +31,9 @@
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu" id="ul-nav-menu">
-                    <li class="menu-active"><a href="index.html">{{__('titles.home')}}</a></li>
+                    <li class="menu-active"><a href="{{url('/')}}">{{__('titles.home')}}</a></li>
                     <li><a href="gallery.html">{{__('titles.art works')}}</a></li>
+                    <li><a href="gallery.html">{{__('titles.wall murals')}}</a></li>
                     <li><a href="blog-home.html">{{__('titles.blog')}}</a></li>
                     <li><a href="about.html">{{__('titles.about mary')}}</a></li>
                     <li><a href="contact.html">{{__('titles.contact me')}}</a></li>

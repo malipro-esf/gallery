@@ -137,4 +137,6 @@ return [
     'contact me' => 'ارتباط با من',
     'about mary' => 'در مورد مریم',
     'blog' => 'بلاگ',
+    "banner message" => 'آثار تابلویی و دیواری مریم کندری',
+    'wall murals' => 'آثار دیواری',
 ];

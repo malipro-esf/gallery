@@ -135,5 +135,7 @@ return [
     'contact me' => 'Contact Me',
     'about mary' => 'About Mary',
     'blog' => 'Blog',
+    "banner message" => "Maryam Kandari's painting and mural",
+    'wall murals' => 'Wall Murals',
 
 ];

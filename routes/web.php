@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\SingleController;
 use App\Http\Controllers\User\HomeController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,6 +40,15 @@ Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name(
 Route::get('/login', function (){
     return view('auth.login');
 })->name('login');
+
+Route::get('/clear-cache', function() {
+    Artisan::call('config:cache');
+    Artisan::call('config:clear');
+    Artisan::call('route:cache');
+    Artisan::call('view:cache');
+    return "Cache is cleared";
+    // return what you want
+});
 
 
 //admin routes

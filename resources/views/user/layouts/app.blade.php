@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
+    <meta name="description" content="Paintings by Maryam Kondori | آثار تابلویی و دیواری مریم کندری">
+
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
@@ -37,15 +39,14 @@
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row fullscreen d-flex align-items-center justify-content-center">
-            <div class="banner-content col-lg-8" style="margin-top: 10rem" >
-                <h6 class="text-white">Openning on 21st February, 2018</h6>
-                <h1 class="text-white">
-                    Exhibition on Modern Era
+            <div class="banner-content col-lg-8">
+                <h1 class="text-white banner-message">
+                    {{__('titles.banner message')}}
                 </h1>
-                <p class="pt-20 pb-20 text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim. sed do eiusmod tempor incididunt..
-                </p>
+{{--                <p class="pt-20 pb-20 text-white">--}}
+{{--                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore--}}
+{{--                    et dolore magna aliqua. Ut enim ad minim. sed do eiusmod tempor incididunt..--}}
+{{--                </p>--}}
 {{--                <a href="#" class="primary-btn text-uppercase">Get Started</a>--}}
             </div>
         </div>

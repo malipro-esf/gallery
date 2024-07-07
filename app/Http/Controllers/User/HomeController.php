@@ -11,22 +11,7 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-//        //getting country name for choosing language
-//        if($this->getUserCountry($request)=='Iran') {
-//
-//        }else {
-//
-//        }
-//        dd('sdd');
-
         return view('user.index');
     }
-
-//    public function getUserCountry(Request $request): \Illuminate\Http\JsonResponse
-//    {
-//        $country = IpHelper::getUserCountry();
-//
-//        return response()->json(['country' => $country]);
-//    }
 
 }

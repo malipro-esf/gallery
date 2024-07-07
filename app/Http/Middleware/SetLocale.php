@@ -17,7 +17,6 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next)
     {
-        $locale = session('locale');
         if (!session()->has('country_checked')) {
             $country = IpHelper::getUserCountry();
 
