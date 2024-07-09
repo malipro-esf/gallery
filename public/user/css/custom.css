@@ -36,3 +36,15 @@
 .banner-message {
     font-family: 'Iranian Sans', sans-serif;
 }
+.about-text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Poppins", sans-serif
+}
+.about-content {
+    text-align: right;
+    font-family: 'Iranian Sans', sans-serif;
+}
+.start-about {
+ text-align: right;
+}

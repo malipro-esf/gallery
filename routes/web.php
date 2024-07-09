@@ -34,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['register' => true]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-mary', [HomeController::class, 'about'])->name('about.mary');
 Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
 
 

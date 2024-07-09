@@ -43,11 +43,6 @@
                 <h1 class="text-white banner-message">
                     {{__('titles.banner message')}}
                 </h1>
-{{--                <p class="pt-20 pb-20 text-white">--}}
-{{--                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore--}}
-{{--                    et dolore magna aliqua. Ut enim ad minim. sed do eiusmod tempor incididunt..--}}
-{{--                </p>--}}
-{{--                <a href="#" class="primary-btn text-uppercase">Get Started</a>--}}
             </div>
         </div>
     </div>
@@ -80,6 +75,6 @@
 <script src="{{asset('user/js/mail-script.js')}}"></script>
 <script src="{{asset('user/js/main.js')}}"></script>
 <script src="{{asset('user/js/set-header-menu-persian-order.js')}}"></script>
-
+@yield('script')
 </body>
 </html>

@@ -131,11 +131,11 @@ return [
     'frame' => 'Frame',
     'language' => 'Language',
     'home' => 'Home',
-    'art works' => 'Art Works',
     'contact me' => 'Contact Me',
     'about mary' => 'About Mary',
     'blog' => 'Blog',
     "banner message" => "Maryam Kandari's painting and mural",
     'wall murals' => 'Wall Murals',
-
+    'few words about mary' => 'Few words about Mary',
+    'Where did it start' => 'Where did it start?'
 ];

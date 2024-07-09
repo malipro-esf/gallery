@@ -82,7 +82,7 @@ return [
     'comment' => 'نظر',
     'comments' => 'نظرات',
     'artwork' => 'اثر هنری',
-    'artworks' => 'اثرهای هنری',
+    'artworks' => 'آثار هنری',
     'user name' => 'نام کاربر',
     'user' => 'کاربر',
     'users' => 'کاربران',
@@ -133,10 +133,12 @@ return [
     'frame' => 'قاب',
     'language' => 'زبان',
     'home' => 'خانه',
-    'art works' => 'آثار هنری',
     'contact me' => 'ارتباط با من',
     'about mary' => 'در مورد مریم',
     'blog' => 'بلاگ',
     "banner message" => 'آثار تابلویی و دیواری مریم کندری',
     'wall murals' => 'آثار دیواری',
+    'few words about mary' => 'چند کلمه در مورد مریم',
+    'Where did it start' => 'از کجا شروع شد؟'
+
 ];
