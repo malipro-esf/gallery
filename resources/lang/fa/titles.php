@@ -139,6 +139,6 @@ return [
     "banner message" => 'آثار تابلویی و دیواری مریم کندری',
     'wall murals' => 'آثار دیواری',
     'few words about mary' => 'چند کلمه در مورد مریم',
-    'Where did it start' => 'از کجا شروع شد؟'
+    'where-did-it-start' => 'از کجا شروع شد؟',
 
 ];

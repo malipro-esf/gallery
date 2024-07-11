@@ -23,9 +23,10 @@ class SetLocale
             //getting country name for choosing language
             if ($country == 'Iran') session()->put('locale', 'fa'); else session()->put('locale', 'en');
 
+            session()->put('country_checked', true);
+
             session()->save();
 
-            session()->put('country_checked', true);
         }
         return $next($request);
     }

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'about' => "My father loved art and was an avid reader. At one time, he even owned a bookstore.
-     With his encouragement and support, I started drawing with colored pencils at the age of 12.
-     Sometimes I would melt solid oil, apply it on paper, and after it dried, I would copy my design.
+    'about' => "My father loved art and was an avid reader. At one time, he even owned a bookstore. With his encouragement and support,
+I started drawing with colored pencils at the age of 12. Sometimes I would melt solid oil, apply it on paper, and after it dried,
+I would copy my design.
 
 In the summer of 2004, I attended an oil painting class and painted several landscape paintings. One day, my father looked at my paintings and said, 'Maryam, your paintings are beautiful, but the perspective is weak.'
 
@@ -20,3 +20,4 @@ In summary, at the end of my academic year, I made a strong start in mural paint
 Since 2019, I became a painting and beautification contractor for the municipality and painted many walls. I worked on cafés, children's and teenagers' rooms, beauty salons, and more. My mural and easel paintings progressed simultaneously to the point where I painted walls by day and canvases by night, transforming copied works into original ones and forming a new mindset about color."
 ];
 
+?>

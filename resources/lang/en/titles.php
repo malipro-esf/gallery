@@ -137,5 +137,5 @@ return [
     "banner message" => "Maryam Kandari's painting and mural",
     'wall murals' => 'Wall Murals',
     'few words about mary' => 'Few words about Mary',
-    'Where did it start' => 'Where did it start?'
+    'where-did-it-start' => 'Where did it start?',
 ];

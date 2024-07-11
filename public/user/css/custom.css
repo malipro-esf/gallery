@@ -39,12 +39,33 @@
 .about-text {
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+.en-font {
     font-family: "Poppins", sans-serif
 }
-.about-content {
+.fa-font {
+    font-family: 'Iranian Sans', sans-serif;
+}
+.pre-about-content {
     text-align: right;
     font-family: 'Iranian Sans', sans-serif;
 }
 .start-about {
  text-align: right;
+}
+#few-words::before {
+    content: '';
+}
+
+#start-about::before {
+    content: '';
+}
+#about-content::before {
+    content: ''
+}
+.dir-rtl {
+    direction: rtl;
+}
+.dir-ltr{
+    direction: ltr;
 }

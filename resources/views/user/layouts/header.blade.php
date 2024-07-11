@@ -36,7 +36,7 @@
                     <li><a href="gallery.html">{{__('titles.wall murals')}}</a></li>
                     <li><a href="blog-home.html">{{__('titles.blog')}}</a></li>
                     <li><a href="{{route('about.mary')}}">{{__('titles.about mary')}}</a></li>
-                    <li><a href="contact.html">{{__('titles.contact me')}}</a></li>
+                    <li><a href="{{route('contact.me')}}">{{__('titles.contact me')}}</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
 

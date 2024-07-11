@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BillController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\User\ContactMeController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\ProposedPriceController;
 use App\Http\Controllers\Admin\SettingsController;
@@ -35,6 +36,8 @@ Auth::routes(['register' => true]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-mary', [HomeController::class, 'about'])->name('about.mary');
+Route::get('/contact-me', [ContactMeController::class, 'index'])->name('contact.me');
+Route::Post('/contact-me-save', [ContactMeController::class, 'save'])->name('contact.me.save');
 Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
 
 
