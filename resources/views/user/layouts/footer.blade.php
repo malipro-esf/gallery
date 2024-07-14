@@ -16,15 +16,16 @@
             </div>
             <div class="col-lg-5  col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h6>Newsletter</h6>
-                    <p>Stay update with our latest</p>
+                    <h6 id="newsletter">{{__('titles.Newsletter')}}</h6>
+                    <p id="latest">{{__('titles.Stay update with our latest')}}</p>
                     <div class="" id="mc_embed_signup">
-                        <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                            <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                            </div>
+                        <form  novalidate="true" action="{{url('newsletter')}}" method="post" class="form-inline">
+                            @csrf
+                            <input class="form-control" name="email" placeholder="{{__('titles.enter email address')}}" onfocus="this.placeholder = ''" onblur="this.placeholder = {{__('titles.enter email address')}}" required="" type="email">
+                            <button type="submit" class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
+{{--                            <div style="position: absolute; left: -5000px;">--}}
+{{--                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">--}}
+{{--                            </div>--}}
 
                             <div class="info"></div>
                         </form>

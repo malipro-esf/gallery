@@ -57,6 +57,9 @@ return [
 
     //contact me
     'Thanks for contacting us' => 'از ارسال پیام شما متشکریم. به زودی پیام شما را پاسخ می دهیم',
-    'Something went wrong' => 'خظایی رخ داده است. لطفا دوباره تلاش کنید'
+    'Something went wrong' => 'خظایی رخ داده است. لطفا دوباره تلاش کنید',
+
+    //newsletter
+    'your email submitted' => 'Your email has been successfully registered, and new updates and content will be sent to you.'
 
 ];

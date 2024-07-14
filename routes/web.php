@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\SingleController;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\NewsletterController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,8 @@ Route::get('/about-mary', [HomeController::class, 'about'])->name('about.mary');
 Route::get('/contact-me', [ContactMeController::class, 'index'])->name('contact.me');
 Route::Post('/contact-me-save', [ContactMeController::class, 'store'])->name('contact.me.save');
 Route::get('refresh-captcha', [ContactMeController::class, 'refreshCaptcha'])->name('refresh.captcha');
+
+Route::Post('newsletter' , [NewsLetterController::class]);
 
 Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
 

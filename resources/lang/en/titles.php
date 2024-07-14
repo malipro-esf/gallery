@@ -142,5 +142,8 @@ return [
     'enter email address' => 'Enter email address',
     'enter your subject' => 'Enter your subject',
     'send message' => 'Send Message',
-    'Send us your query anytime!' => 'Send us your query anytime!'
+    'Send us your query anytime!' => 'Send us your query anytime!',
+    'Stay update with our latest' => 'Stay update with our latest',
+    'Newsletter' => 'Newsletter'
+
 ];

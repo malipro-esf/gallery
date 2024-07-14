@@ -51,6 +51,8 @@ return [
 
     //contact me
     'Thanks for contacting us' => 'Thanks for contacting us! We will get back to you soon.',
-    'Something went wrong' => 'Something went wrong, please try again later.'
+    'Something went wrong' => 'Something went wrong, please try again later.',
 
+    //newsletter
+    'your email submitted' => ''
 ];

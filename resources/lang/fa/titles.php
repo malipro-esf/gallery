@@ -144,7 +144,9 @@ return [
     'enter email address' => 'ایمیل را وارد کنید',
     'enter your subject' => 'موضوع را وارد کنید',
     'send message' => 'ارسال پیام',
-    'Send us your query anytime!' => 'درخواست خود را در هر زمان برای ما ارسال کنید!'
+    'Send us your query anytime!' => 'درخواست خود را در هر زمان برای ما ارسال کنید!',
+    'Stay update with our latest' => 'از آخرین آثار و مطالب باخبر شوید',
+    'Newsletter' => 'خبرنامه',
 
 
 ];

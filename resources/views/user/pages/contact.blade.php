@@ -34,9 +34,9 @@
                             <div class="col-lg-6 form-group">
                                 <input id="full-name" name="full_name" value="{{old('full_name')}}" placeholder="{{__('titles.enter your name')}}" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
 
-                                <input id="email" name="email"  value="{{old('email')}}"  placeholder="{{__('titles.enter email address')}}" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+                                <input id="email" name="email"  value="{{old('email')}}"  placeholder="{{__('titles.enter email address')}}" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = {{__('titles.enter email address')}}" class="common-input mb-20 form-control" required="" type="email">
 
-                                <input id="subject" name="subject"  value="{{old('subject')}}"  placeholder="{{__('titles.enter your subject')}}" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
+                                <input id="subject" name="subject"  value="{{old('subject')}}"  placeholder="{{__('titles.enter your subject')}}" onfocus="this.placeholder = ''" onblur="this.placeholder = {{__('titles.enter your subject')}}" class="common-input mb-20 form-control" required="" type="text">
                                 <div class="mt-20 alert-msg" style="text-align: left;"></div>
 
                             </div>
