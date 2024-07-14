@@ -47,6 +47,10 @@ return [
     'login_again' => 'Please login again',
 
     'can not delete because of related records' => 'Can not delete because of related records',
-    'sold can not delete' => 'The sold artwork can not be deleted'
+    'sold can not delete' => 'The sold artwork can not be deleted',
+
+    //contact me
+    'Thanks for contacting us' => 'Thanks for contacting us! We will get back to you soon.',
+    'Something went wrong' => 'Something went wrong, please try again later.'
 
 ];

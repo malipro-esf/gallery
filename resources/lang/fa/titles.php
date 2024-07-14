@@ -140,5 +140,11 @@ return [
     'wall murals' => 'آثار دیواری',
     'few words about mary' => 'چند کلمه در مورد مریم',
     'where-did-it-start' => 'از کجا شروع شد؟',
+    'enter your name' => 'نام خود را وارد کنید',
+    'enter email address' => 'ایمیل را وارد کنید',
+    'enter your subject' => 'موضوع را وارد کنید',
+    'send message' => 'ارسال پیام',
+    'Send us your query anytime!' => 'درخواست خود را در هر زمان برای ما ارسال کنید!'
+
 
 ];

@@ -36,8 +36,11 @@ Auth::routes(['register' => true]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-mary', [HomeController::class, 'about'])->name('about.mary');
+//contact me routes
 Route::get('/contact-me', [ContactMeController::class, 'index'])->name('contact.me');
-Route::Post('/contact-me-save', [ContactMeController::class, 'save'])->name('contact.me.save');
+Route::Post('/contact-me-save', [ContactMeController::class, 'store'])->name('contact.me.save');
+Route::get('refresh-captcha', [ContactMeController::class, 'refreshCaptcha'])->name('refresh.captcha');
+
 Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
 
 
@@ -46,10 +49,10 @@ Route::get('/login', function (){
 })->name('login');
 
 Route::get('/clear-cache', function() {
-    Artisan::call('config:cache');
     Artisan::call('config:clear');
     Artisan::call('route:cache');
     Artisan::call('view:cache');
+    shell_exec('composer dump-autoload');
     return "Cache is cleared";
     // return what you want
 });

@@ -13,7 +13,9 @@ class Contact extends Model
         'full_name',
         'email',
         'message',
+        'subject',
         'replied_message',
+        'parent_id',
     ];
 
 

@@ -9,7 +9,7 @@ return [
     'English' => 'English',
     'Persian' => 'Persian',
     'Messages' => 'Messages',
-    'message' => 'Message',
+    'Message' => 'Message',
     'New' => 'New',
     'View Profile' => 'View Profile',
     'Contact Us' => 'Contact Us',
@@ -138,4 +138,9 @@ return [
     'wall murals' => 'Wall Murals',
     'few words about mary' => 'Few words about Mary',
     'where-did-it-start' => 'Where did it start?',
+    'enter your name' => 'Enter your name',
+    'enter email address' => 'Enter email address',
+    'enter your subject' => 'Enter your subject',
+    'send message' => 'Send Message',
+    'Send us your query anytime!' => 'Send us your query anytime!'
 ];

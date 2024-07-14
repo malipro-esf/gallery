@@ -53,6 +53,10 @@ return [
     //template sentences
     'You can customize this template as you want' => 'میتونی هر جور که میخوای این قالب را سفارش سازی کنی',
     'can not delete because of related records' => 'به علت وجود رکورد های وابسته حذف امکان پذیر نیست!',
-    'sold can not delete' => 'اثر هنری فروخته شده قابل حذف نیست'
+    'sold can not delete' => 'اثر هنری فروخته شده قابل حذف نیست',
+
+    //contact me
+    'Thanks for contacting us' => 'از ارسال پیام شما متشکریم. به زودی پیام شما را پاسخ می دهیم',
+    'Something went wrong' => 'خظایی رخ داده است. لطفا دوباره تلاش کنید'
 
 ];
