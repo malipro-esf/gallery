@@ -144,6 +144,8 @@ return [
     'send message' => 'Send Message',
     'Send us your query anytime!' => 'Send us your query anytime!',
     'Stay update with our latest' => 'Stay update with our latest',
-    'Newsletter' => 'Newsletter'
+    'Newsletter' => 'Newsletter',
+    'Follow Me' => 'Follow Me',
+    'let us be social' => 'let us be social'
 
 ];

@@ -17,7 +17,8 @@ My work transitioned from Realism to alla prima and conceptual and thematic piec
 
 In summary, at the end of my academic year, I made a strong start in mural painting by painting the university café's wall. However, my mural painting journey had actually started in 2013 at a kindergarten, but not in a specialized manner.
 
-Since 2019, I became a painting and beautification contractor for the municipality and painted many walls. I worked on cafés, children's and teenagers' rooms, beauty salons, and more. My mural and easel paintings progressed simultaneously to the point where I painted walls by day and canvases by night, transforming copied works into original ones and forming a new mindset about color."
+Since 2019, I became a painting and beautification contractor for the municipality and painted many walls. I worked on cafés, children's and teenagers' rooms, beauty salons, and more. My mural and easel paintings progressed simultaneously to the point where I painted walls by day and canvases by night, transforming copied works into original ones and forming a new mindset about color.",
+    'summary' => "Mary's artworks"
 ];
 
 ?>

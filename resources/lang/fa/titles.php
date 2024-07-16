@@ -147,6 +147,8 @@ return [
     'Send us your query anytime!' => 'درخواست خود را در هر زمان برای ما ارسال کنید!',
     'Stay update with our latest' => 'از آخرین آثار و مطالب باخبر شوید',
     'Newsletter' => 'خبرنامه',
+    'Follow Me' => 'منو دنبال کن',
+    'let us be social' => 'اجتماعی باشیم',
 
 
 ];
