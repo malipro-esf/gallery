@@ -55,7 +55,7 @@ Route::get('/clear-cache', function() {
     Artisan::call('config:clear');
     Artisan::call('route:cache');
     Artisan::call('view:cache');
-    shell_exec('composer dump-autoload');
+//    shell_exec('composer dump-autoload');
     return "Cache is cleared";
     // return what you want
 });
