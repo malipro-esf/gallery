@@ -18,7 +18,7 @@
             <div class="col-6 top-head-right">
                 <ul>
                     <li><a href="https://www.instgit logagram.com/painter.marii" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com/painter.mariy"><i class="fa fa-facebook"></i></a></li>
                 </ul>
             </div>
         </div>
