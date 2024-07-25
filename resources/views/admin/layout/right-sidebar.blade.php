@@ -185,6 +185,27 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="icon-Blogger"></i>
+                        <span class="hide-menu">{{__('titles.blog')}} </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item">
+                            <a href="{{route('blog.index')}}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu">{{__('titles.list')}} </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('blog.create')}}" class="sidebar-link">
+                                <i class="mdi mdi-email"></i>
+                                <span class="hide-menu">{{__('titles.create')}} </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="icon-Settings-Window"></i>
                         <span class="hide-menu">{{__('titles.settings')}} </span>
                     </a>

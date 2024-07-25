@@ -149,6 +149,7 @@ return [
     'Newsletter' => 'خبرنامه',
     'Follow Me' => 'منو دنبال کن',
     'let us be social' => 'اجتماعی باشیم',
-
+    'english content' => 'محتوای انگلیسی',
+    'persian content' => 'محتوای فارسی',
 
 ];

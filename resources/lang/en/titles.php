@@ -22,7 +22,7 @@ return [
     'style' => 'Style',
     'styles' => 'Styles',
     'create' => 'Create',
-    'List' => 'List',
+    'list' => 'List',
     'create category' => 'Create Category',
     'persian name' => 'Persian Name',
     'persian title' => 'Persian Title',
@@ -107,8 +107,6 @@ return [
     'enter statement in english' => 'Enter statement in English',
     'enter statement in persian' => 'Enter statement in Persian',
     'idea' => 'Idea',
-    'persian description' => 'Persian Description',
-    'english description' => 'English Description',
     'enter description in persian' => 'Enter description in Persian',
     'enter description in english' => 'Enter description in English',
     'show' => 'show',
@@ -146,6 +144,8 @@ return [
     'Stay update with our latest' => 'Stay update with our latest',
     'Newsletter' => 'Newsletter',
     'Follow Me' => 'Follow Me',
-    'let us be social' => 'let us be social'
+    'let us be social' => 'let us be social',
+    'english content' => 'English Content',
+    'persian content' => 'Persian Content',
 
 ];
