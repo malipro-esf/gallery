@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 use App\Models\Blog;
+use Illuminate\Validation\Rule;
 
 class BlogRepository implements BlogRepositoryInterface
 {
@@ -18,12 +19,11 @@ class BlogRepository implements BlogRepositoryInterface
     public function store($data)
     {
         $data->validate([
-            'title_persian' => 'required|min:3',
-            'title_english' => 'required|min:3',
+            'title_persian' => 'required|min:3|unique:blogs,title_persian',
+            'title_english' => 'required|min:3|unique:blogs,title_english',
             'content_persian' => 'required|min:3',
             'content_english' => 'required|min:3',
         ]);
-
 
         Blog::create([
             'title_persian' => $data->input('title_persian'),
@@ -36,7 +36,6 @@ class BlogRepository implements BlogRepositoryInterface
     public function show(Blog $blog)
     {
         return view('admin.blog.show', compact('blog'));
-
     }
 
     public function edit(Blog $blog)
@@ -46,15 +45,26 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function update(Blog $blog, $data)
     {
-        $blog->update($data);
+        $validatedData = $data->validate([
+            'title_persian' => ['required','min:3',Rule::unique('blogs')->ignore($blog->id)],
+            'title_english' => ['required','min:3',Rule::unique('blogs')->ignore($blog->id)],
+            'content_persian' => 'required|min:3',
+            'content_english' => 'required|min:3',
+        ]);
 
-        return view('admin.blog.index')->with('success-message', 'create_successful');
+        $blog->update($validatedData);
+
+        $blogs = $this->getAll();
+        return view('admin.blog.index', compact('blogs'))->with('success-message', 'create_successful');
 
     }
 
     public function delete(Blog $blog)
     {
-        $blog->delete();
+        if($blog->delete())
+            return true;
+        else
+            return false;
     }
 
 }

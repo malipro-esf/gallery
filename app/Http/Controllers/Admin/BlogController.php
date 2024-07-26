@@ -23,6 +23,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = $this->repository->getAll();
+//        dd($blogs);
         return view('admin.blog.index', compact('blogs'));
     }
 
@@ -68,7 +69,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return $this->repository->edit($blog);
     }
 
     /**
@@ -78,9 +79,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Blog $blog)
     {
-        //
+        return $this->repository->update($blog, $request);
     }
 
     /**
@@ -89,8 +90,11 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Blog $blog)
     {
-        //
+        if($this->repository->delete($blog))
+            return back()->with('success-message','delete_successful');
+        else
+            return back()->with('error-message','delete_failed');
     }
 }

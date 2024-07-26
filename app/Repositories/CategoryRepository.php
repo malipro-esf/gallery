@@ -81,7 +81,6 @@ class CategoryRepository implements CategoryRepositoryInterface
             else
                 $category->image()->create(['url' => $fileName]);
 
-
         }
 
     }
