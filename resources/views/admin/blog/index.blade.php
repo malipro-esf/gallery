@@ -15,14 +15,21 @@
                     <table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe" data-tablesaw-sortable data-tablesaw-sortable-switch data-tablesaw-minimap data-tablesaw-mode-switch>
                         <thead>
                         <tr class="text-center">
+                            <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">{{__('titles.id')}}</th>
                             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">{{__('titles.persian title')}}</th>
                             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">{{__('titles.english title')}}</th>
                             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="6">{{__('titles.actions')}}</th>
                         </tr>
                         </thead>
                         <tbody>
+
+                        @foreach($blogs as $index => $blog)
+                            <tr class="text-center">
+                                <td>{{++$index}}</td>
+
                         @foreach($blogs as $blog)
                             <tr class="text-center">
+
                                 <td>{{$blog->title_persian}}</td>
                                 <td>{{$blog->title_english}}</td>
                                 <td>

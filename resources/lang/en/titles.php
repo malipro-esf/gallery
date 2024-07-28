@@ -147,5 +147,6 @@ return [
     'let us be social' => 'let us be social',
     'english content' => 'English Content',
     'persian content' => 'Persian Content',
+    'id' => 'Id',
 
 ];

@@ -15,8 +15,14 @@ class Tag extends Model
         'name_english',
     ];
 
-    public function artworks()
+    public function taggables()
     {
-        return $this->belongsToMany(Artwork::class);
+        return $this->morphedByMany(Taggable::class, 'taggable');
+    }
+
+    public function getNameAttribute()
+    {
+        $locale = session()->get('locale');
+        return $locale == 'en' ? $this->name_english : $this->name_persian;
     }
 }

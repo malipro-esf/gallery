@@ -18,8 +18,8 @@ class AddNewColumnsToBlogTable extends Migration
             $table->dropColumn('content');
             $table->string('title_persian')->unique();
             $table->string('title_english')->unique();
-            $table->string('content_persian');
-            $table->string('content_english');
+            $table->text('content_persian');
+            $table->text('content_english');
         });
     }
 

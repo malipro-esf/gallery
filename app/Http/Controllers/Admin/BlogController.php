@@ -23,7 +23,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = $this->repository->getAll();
-//        dd($blogs);
+
         return view('admin.blog.index', compact('blogs'));
     }
 

@@ -15,4 +15,15 @@ class Blog extends Model
         'content_persian',
         'content_english'
     ];
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
+
 }

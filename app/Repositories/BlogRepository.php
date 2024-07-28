@@ -2,6 +2,9 @@
 
 namespace App\Repositories;
 use App\Models\Blog;
+
+use App\Models\Tag;
+
 use Illuminate\Validation\Rule;
 
 class BlogRepository implements BlogRepositoryInterface
@@ -13,7 +16,10 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function create()
     {
-        return view('admin.blog.create');
+
+        $tags = Tag::all();
+        return view('admin.blog.create', compact('tags'));
+
     }
 
     public function store($data)
@@ -23,7 +29,11 @@ class BlogRepository implements BlogRepositoryInterface
             'title_english' => 'required|min:3|unique:blogs,title_english',
             'content_persian' => 'required|min:3',
             'content_english' => 'required|min:3',
+            'tag' => 'array',
+            'tag.*' => 'exists:tags,id',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:500'
         ]);
+
 
         Blog::create([
             'title_persian' => $data->input('title_persian'),
@@ -31,6 +41,17 @@ class BlogRepository implements BlogRepositoryInterface
             'content_persian' => $data->input('content_persian'),
             'content_english' => $data->input('content_english'),
         ]);
+
+
+        $tags = $data->input('tags',[]);
+        $blog->tags()->attach($tags);
+
+        $image = $data->file('image');
+        $fileName = date('YmdHi') . $image->getClientOriginalName();
+        $image->move(public_path('images/blogs'), $fileName);
+
+        $blog->images()->create(['url' => $fileName]);
+
     }
 
     public function show(Blog $blog)
