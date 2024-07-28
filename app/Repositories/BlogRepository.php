@@ -35,6 +35,7 @@ class BlogRepository implements BlogRepositoryInterface
         ]);
 
         $blog = Blog::create([
+
             'title_persian' => $data->input('title_persian'),
             'title_english' => $data->input('title_english'),
             'content_persian' => $data->input('content_persian'),

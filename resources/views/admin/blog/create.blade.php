@@ -35,9 +35,9 @@
 
                             <label for="persian-name">{{__('titles.english title')}}</label>
                             <input type="text" required class="form-control" value="{{old('title_english')}}" name="title_english" id="english-title" placeholder="{{__('titles.enter title in english')}}">
-
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
+                   
 
                         <div class="form-group">
                             <label for="content-persian">{{__('titles.persian content')}}</label>
@@ -49,6 +49,7 @@
                             <label for="content-persian">{{__('titles.english content')}}</label>
                             <textarea name="content_english" id="content-english" class="form-control"
                                       rows="4">{{old('content_english')}}</textarea>
+
                         </div>
                         <div class="form-group">
                             <label for="content-persian">{{__('titles.tags')}}</label>
