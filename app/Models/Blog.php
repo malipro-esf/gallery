@@ -25,4 +25,5 @@ class Blog extends Model
     {
         return $this->morphMany(Image::class, 'imageable');
     }
+
 }

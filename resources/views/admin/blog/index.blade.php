@@ -22,9 +22,14 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach($blogs as $index => $blog)
                             <tr class="text-center">
                                 <td>{{++$index}}</td>
+
+                        @foreach($blogs as $blog)
+                            <tr class="text-center">
+
                                 <td>{{$blog->title_persian}}</td>
                                 <td>{{$blog->title_english}}</td>
                                 <td>
