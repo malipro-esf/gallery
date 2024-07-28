@@ -2,12 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -59,6 +54,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\SettingsRepositoryInterface',
             'App\Repositories\SettingsRepository'
         );
+
+        $this->app->bind(
+            'App\Repositories\BlogRepositoryInterface',
+            'App\Repositories\BlogRepository'
+        );
     }
 
     /**
@@ -69,6 +69,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-
     }
 }

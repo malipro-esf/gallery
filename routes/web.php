@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SupportTicketController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\SingleController;
 use App\Http\Controllers\User\HomeController;
@@ -75,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin' ], function () {
     Route::resource('proposed-price',ProposedPriceController::class);
     Route::resource('support-ticket',SupportTicketController::class);
     Route::resource('settings',SettingsController::class);
+    Route::resource('blog',BlogController::class);
 
     Route::get('dashboard', [IndexController::class, 'index'])->name('dashboard');
     Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('admin.set.locale');
