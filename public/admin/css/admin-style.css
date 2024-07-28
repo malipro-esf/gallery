@@ -40,3 +40,8 @@ body {
 .antiquewhite {
     background: antiquewhite !important;
 }
+#blog-imagePreview {
+    width: 35%;
+    height: auto;
+    display: none;
+}

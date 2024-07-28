@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtworkTagTable extends Migration
+class CreateTaggablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateArtworkTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('artwork_tag', function (Blueprint $table) {
-            $table->integer('artwork_id');
-            $table->integer('tag_id');
-            $table->primary(['artwork_id','tag_id']);
+        Schema::create('taggables', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('tag_id')->constrained()->onDelete('cascade');
+            $table->morphs('taggable');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateArtworkTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artwork_tag');
+        Schema::dropIfExists('taggables');
     }
 }

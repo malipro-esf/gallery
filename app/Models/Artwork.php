@@ -88,7 +88,7 @@ class Artwork extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->morphMany(Tag::class,'taggable');
     }
 
     //  should use hasOne because there is just one instance of each artwork
