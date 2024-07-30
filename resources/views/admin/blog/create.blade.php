@@ -40,7 +40,7 @@
                             <input type="text" required class="form-control" value="{{old('title_persian')}}" name="title_persian" id="persian-title" placeholder="{{__('titles.enter title in persian')}}">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
-                   
+
 
                         <div class="form-group">
                             <label for="content-persian">{{__('titles.persian content')}}</label>

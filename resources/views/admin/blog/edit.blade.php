@@ -47,11 +47,13 @@
                         <div class="form-group">
                             <label for="content-persian">{{__('titles.tags')}}</label>
                             <select id="tags" multiple name="tags[]" class="form-control" id="">
-                            @foreach($tags as $tag)
-                                <option value="{{ $tag->id }}" {{ $blog->tags->contains($tag->id) ? 'selected' : '' }}>
-                                    {{ $tag->name }}
-                                </option>
-                            @endforeach
+
+                                @foreach($tags as $tag)
+                                    <option value="{{ $tag->id }}" {{ $blog->tags->contains($tag->id) ? 'selected' : '' }}>
+                                        {{ $tag->name }}
+                                    </option>
+                                @endforeach
+
                             </select>
                         </div>
 
