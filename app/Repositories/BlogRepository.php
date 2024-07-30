@@ -34,8 +34,8 @@ class BlogRepository implements BlogRepositoryInterface
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:500'
         ]);
 
-        $blog = Blog::create([
 
+        Blog::create([
             'title_persian' => $data->input('title_persian'),
             'title_english' => $data->input('title_english'),
             'content_persian' => $data->input('content_persian'),
