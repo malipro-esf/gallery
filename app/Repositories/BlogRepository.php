@@ -34,8 +34,8 @@ class BlogRepository implements BlogRepositoryInterface
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:500'
         ]);
 
-        $blog = Blog::create([
 
+        $blog = Blog::create([
             'title_persian' => $data->input('title_persian'),
             'title_english' => $data->input('title_english'),
             'content_persian' => $data->input('content_persian'),
@@ -60,7 +60,8 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function edit(Blog $blog)
     {
-        return view('admin.blog.edit', compact('blog'));
+        $tags = Tag::all();
+        return view('admin.blog.edit', compact('blog','tags'));
     }
 
     public function update(Blog $blog, $data)
@@ -73,6 +74,28 @@ class BlogRepository implements BlogRepositoryInterface
         ]);
 
         $blog->update($validatedData);
+
+        $tags = $data->input('tags',[]);
+        $blog->tags()->sync($tags);
+
+
+        $oldImageUrl = $blog->images->first()->url ?? null; // Assuming one-to-one relationship
+
+        // Handle the new image upload
+        $image = $data->file('image');
+        $fileName = date('YmdHi') . $image->getClientOriginalName();
+        $image->move(public_path('images/blogs'), $fileName);
+
+        // Update the image record in the database
+        $blog->images()->updateOrCreate(
+            ['url' => $oldImageUrl], // Match by the old image URL or any other identifying field
+            ['url' => $fileName] // Update to the new URL
+        );
+
+        // Delete the old image file if it exists
+        if ($oldImageUrl && file_exists(public_path('images/blogs/' . $oldImageUrl))) {
+            unlink(public_path('images/blogs/' . $oldImageUrl));
+        }
 
         $blogs = $this->getAll();
         return view('admin.blog.index', compact('blogs'))->with('success-message', 'create_successful');

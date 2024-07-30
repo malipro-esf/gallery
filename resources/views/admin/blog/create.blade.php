@@ -35,9 +35,12 @@
 
                             <label for="persian-name">{{__('titles.english title')}}</label>
                             <input type="text" required class="form-control" value="{{old('title_english')}}" name="title_english" id="english-title" placeholder="{{__('titles.enter title in english')}}">
+
+                            <label for="persian-name">{{__('titles.persian title')}}</label>
+                            <input type="text" required class="form-control" value="{{old('title_persian')}}" name="title_persian" id="persian-title" placeholder="{{__('titles.enter title in persian')}}">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
-                   
+
 
                         <div class="form-group">
                             <label for="content-persian">{{__('titles.persian content')}}</label>
@@ -49,7 +52,6 @@
                             <label for="content-persian">{{__('titles.english content')}}</label>
                             <textarea name="content_english" id="content-english" class="form-control"
                                       rows="4">{{old('content_english')}}</textarea>
-
                         </div>
                         <div class="form-group">
                             <label for="content-persian">{{__('titles.tags')}}</label>
@@ -57,6 +59,7 @@
                                 @foreach($tags as $tag)
                                     <option value="{{$tag->id}}">{{$tag->name}}</option>
                                 @endforeach
+
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">{{__('titles.submit')}}</button>
