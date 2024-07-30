@@ -13,6 +13,17 @@
                     <form class="m-t-30" action="{{route('blog.update',['blog' => $blog])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         {{method_field('put')}}
+                        <div class="row">
+                            <div class="col-9">
+                                <label for="image">{{__('titles.image')}}</label>
+                                <input type="file" required accept="image/*" class="form-control" name="image"
+                                       id="image" placeholder="{{__('titles.select an image')}}">
+                                <small id="emailHelp" class="form-text text-muted"></small>
+                            </div>
+                            <div class="col-3">
+                                <img src="{{$blog->images->count()>0?asset('images/blogs/'.$blog->images[0]->url):''}}" id="blog-imagePreview"  alt="Image Preview">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="persian-name">{{__('titles.persian title')}}</label>
                             <input type="text" required class="form-control" value="{{$blog->title_persian}}" name="title_persian" id="persian-title" placeholder="{{__('titles.enter title in persian')}}">
@@ -33,6 +44,17 @@
                             <textarea name="content_english" id="content-english" class="form-control" rows="4">{{$blog->content_english}}</textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label for="content-persian">{{__('titles.tags')}}</label>
+                            <select id="tags" multiple name="tags[]" class="form-control" id="">
+                                @foreach($tags as $tag)
+                                    <option value="{{ $tag->id }}" {{ $blog->tags->contains($tag->id) ? 'selected' : '' }}>
+                                        {{ $tag->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <button type="submit" class="btn btn-primary">{{__('titles.submit')}}</button>
                     </form>
                 </div>
@@ -47,4 +69,23 @@
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
 
+@endsection
+@section('script')
+    <script>
+        $('#blog-imagePreview').show()
+        document.getElementById('image').addEventListener('change', function (event) {
+            var file = event.target.files[0]; // Get the selected file
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var imagePreview = document.getElementById('blog-imagePreview');
+                imagePreview.src = e.target.result; // Set the src of the img tag to the file's data URL
+                imagePreview.style.display = 'block'; // Display the img tag
+            };
+
+            if (file) {
+                reader.readAsDataURL(file); // Read the file as a data URL
+            }
+        });
+    </script>
 @endsection
