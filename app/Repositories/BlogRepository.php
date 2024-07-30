@@ -78,9 +78,7 @@ class BlogRepository implements BlogRepositoryInterface
         $tags = $data->input('tags',[]);
         $blog->tags()->sync($tags);
 
-
         $oldImageUrl = $blog->images->first()->url ?? null; // Assuming one-to-one relationship
-
         // Handle the new image upload
         $image = $data->file('image');
         $fileName = date('YmdHi') . $image->getClientOriginalName();
