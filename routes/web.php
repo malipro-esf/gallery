@@ -47,6 +47,7 @@ Route::Post('newsletter' , [NewsLetterController::class]);
 
 Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
 
+Route::get('blog/{blog}', [HomeController::class, 'singleBlog'])->name('single.blog');
 
 Route::get('/login', function (){
     return view('auth.login');

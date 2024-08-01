@@ -148,4 +148,5 @@ return [
     'english content' => 'English Content',
     'persian content' => 'Persian Content',
     'id' => 'Id',
+    'last blogs' => 'Last blogs'
 ];

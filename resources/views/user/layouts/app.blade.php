@@ -76,6 +76,7 @@
 <script src="{{asset('user/js/main.js')}}"></script>
 <script src="{{asset('user/js/set-header-menu-persian-order.js')}}"></script>
 <script src="{{asset('user/js/footer-lang-custom.js')}}"></script>
+<script src="{{asset('user/js/blog-slider-custom.js')}}"></script>
 @yield('script')
 </body>
 </html>

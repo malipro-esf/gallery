@@ -21,7 +21,7 @@
                                 <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
                             <div class="col-3">
-                                <img id="blog-imagePreview" src="{{ $blog->images->count() > 0 ? asset('/images/blogs/' . $blog->images[0]->url) : asset($publicDir . '/images/default.png') }}" alt="Blog Image">
+                                <img id="blog-imagePreview" src="{{ $blog->images->count() > 0 ? asset('/images/blogs/' . $blog->images[0]->url) : asset('/images/default.png') }}" alt="Blog Image">
 
                             </div>
                         </div>

@@ -152,4 +152,5 @@ return [
     'english content' => 'محتوای انگلیسی',
     'persian content' => 'محتوای فارسی',
     'id' => 'آیدی',
+    'last blogs' => 'آخرین مطالب'
 ];
