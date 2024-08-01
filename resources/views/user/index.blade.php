@@ -4,6 +4,8 @@
 
 @section('content')
 
+    @include('user.layouts.blog_slider')
+
     <!-- Start gallery Area -->
     <section class="gallery-area section-gap" id="gallery">
         <div class="container">
@@ -18,10 +20,7 @@
             <div id="grid-container" class="row">
                 @foreach($artworks as $art )
                     <a class="single-gallery" href="#"><img class="grid-item" src="{{asset('images/artworks/'.$art->images[0]->url)}}"></a>
-
                 @endforeach
-
-
             </div>
         </div>
     </section>
