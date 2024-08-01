@@ -16,12 +16,13 @@
                         <div class="row">
                             <div class="col-9">
                                 <label for="image">{{__('titles.image')}}</label>
-                                <input type="file" required accept="image/*" class="form-control" name="image"
+                                <input type="file" accept="image/*" class="form-control" name="image"
                                        id="image" placeholder="{{__('titles.select an image')}}">
                                 <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
                             <div class="col-3">
-                                <img src="{{$blog->images->count()>0?asset('images/blogs/'.$blog->images[0]->url):''}}" id="blog-imagePreview"  alt="Image Preview">
+                                <img id="blog-imagePreview" src="{{ $blog->images->count() > 0 ? asset('/images/blogs/' . $blog->images[0]->url) : asset($publicDir . '/images/default.png') }}" alt="Blog Image">
+
                             </div>
                         </div>
                         <div class="form-group">

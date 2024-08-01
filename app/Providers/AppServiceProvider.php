@@ -15,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //set public_html as public folder to deployment on cpanel
+        $this->app->bind('path.public', function() {
+            return realpath(base_path().'/../public_html');
+        });
+
         $this->app->bind(
             'App\Repositories\CategoryRepositoryInterface',
             'App\Repositories\CategoryRepository'

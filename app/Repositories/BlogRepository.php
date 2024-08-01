@@ -78,22 +78,25 @@ class BlogRepository implements BlogRepositoryInterface
         $tags = $data->input('tags',[]);
         $blog->tags()->sync($tags);
 
-        $oldImageUrl = $blog->images->first()->url ?? null; // Assuming one-to-one relationship
-        // Handle the new image upload
-        $image = $data->file('image');
-        $fileName = date('YmdHi') . $image->getClientOriginalName();
-        $image->move(public_path('images/blogs'), $fileName);
+        if($data->image) {
+            $oldImageUrl = $blog->images->first()->url ?? null;
 
-        // Update the image record in the database
-        $blog->images()->updateOrCreate(
-            ['url' => $oldImageUrl], // Match by the old image URL or any other identifying field
-            ['url' => $fileName] // Update to the new URL
-        );
+            $image = $data->file('image');
+            $fileName = date('YmdHi') . $image->getClientOriginalName();
+            $image->move(public_path('images/blogs'), $fileName);
 
-        // Delete the old image file if it exists
-        if ($oldImageUrl && file_exists(public_path('images/blogs/' . $oldImageUrl))) {
-            unlink(public_path('images/blogs/' . $oldImageUrl));
+            // Update the image record in the database
+            $blog->images()->updateOrCreate(
+                ['url' => $oldImageUrl], // Match by the old image URL or any other identifying field
+                ['url' => $fileName] // Update to the new URL
+            );
+
+            // Delete the old image file if it exists
+            if ($oldImageUrl && file_exists(public_path('images/blogs/' . $oldImageUrl))) {
+                unlink(public_path('images/blogs/' . $oldImageUrl));
+            }
         }
+
 
         $blogs = $this->getAll();
         return view('admin.blog.index', compact('blogs'))->with('success-message', 'create_successful');
@@ -102,6 +105,13 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function delete(Blog $blog)
     {
+        //remove image
+        $imageUrl = $blog->images->first()->url ?? null;
+        unlink(public_path('images/blogs/' . $imageUrl));
+
+        $blog->images()->delete();
+        $blog->tags()->detach();
+
         if($blog->delete())
             return true;
         else
