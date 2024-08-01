@@ -6,6 +6,15 @@
         <div class="col-12">
             <div class="card antiquewhite">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="{{route('blog.index')}}" class="btn btn-primary text-white">{{__('titles.list')}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @include('error-validation')
                     @include('success-message')
                     <h4 class="card-title">{{__('titles.create')}}</h4>
@@ -36,8 +45,6 @@
                             <label for="persian-name">{{__('titles.english title')}}</label>
                             <input type="text" required class="form-control" value="{{old('title_english')}}" name="title_english" id="english-title" placeholder="{{__('titles.enter title in english')}}">
 
-                            <label for="persian-name">{{__('titles.persian title')}}</label>
-                            <input type="text" required class="form-control" value="{{old('title_persian')}}" name="title_persian" id="persian-title" placeholder="{{__('titles.enter title in persian')}}">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
 

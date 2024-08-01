@@ -7,6 +7,15 @@
             <!-- Column -->
             <div class="card">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="{{route('blog.create')}}" class="btn btn-primary text-white">{{__('titles.create')}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @include('error-validation')
                     @include('success-message')
                     @include('error-message')
