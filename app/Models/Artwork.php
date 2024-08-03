@@ -14,6 +14,8 @@ class Artwork extends Model
     protected $fillable = [
         'name_persian',
         'name_english',
+        'slug_english',
+        'slug_persian',
         'idea_type',
         'paint_type',
         'year_created',
@@ -88,7 +90,7 @@ class Artwork extends Model
 
     public function tags()
     {
-        return $this->morphMany(Tag::class,'taggable');
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 
     //  should use hasOne because there is just one instance of each artwork

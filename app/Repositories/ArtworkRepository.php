@@ -10,6 +10,7 @@ use App\Models\ArtworkTechnique;
 use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Tag;
+use Illuminate\Support\Str;
 
 class ArtworkRepository implements ArtworkRepositoryInterface
 {
@@ -34,9 +35,13 @@ class ArtworkRepository implements ArtworkRepositoryInterface
     {
         $artwork = Artwork::create($data->except('images', 'techniques', 'styles', 'tags', 'attrValues'));
 
-        //save tags
-        foreach ($data->tags as $tag)
-            ArtworkTag::create(['artwork_id' => $artwork->id, 'tag_id' => $tag]);
+        $artwork->update([
+            'slug_persian' => Str::slug($artwork->name_persian, '-'),
+            'slug_english' => Str::slug($artwork->slug_english, '-')
+        ]);
+
+        $tags = $data->input('tags',[]);
+        $artwork->tags()->attach($tags);
 
         //save styles
         foreach ($data->styles as $style)
@@ -80,10 +85,6 @@ class ArtworkRepository implements ArtworkRepositoryInterface
 
         $attributes = Attribute::with('values')->get();
 
-        //get artwork tags
-        foreach ($artwork->tags as $tag)
-            $artTags[] = $tag->tag_id;
-
         //get artwork styles
         foreach ($artwork->styles as $style)
             $artStyles[] = $style->style_id;
@@ -92,22 +93,21 @@ class ArtworkRepository implements ArtworkRepositoryInterface
         foreach ($artwork->techniques as $technique)
             $artTechniques[] = $technique->technique_id;
 
+
         //get artwork techniques
         foreach ($artwork->attributes as $attr)
             $artAttrs[] = $attr->attributevalue_id;
 
         return view('admin.artwork.edit',
-            compact('categories', 'tags', 'attributes', 'artwork', 'artTags', 'artTechniques', 'artStyles', 'artAttrs'));
+            compact('categories', 'tags', 'attributes', 'artwork', 'artTechniques', 'artStyles', 'artAttrs'));
     }
 
     public function update(Artwork $artwork, $data)
     {
         $artwork->update($data->except('images', 'techniques', 'styles', 'tags', 'attrValues'));
 
-        $artwork->tags()->delete();
-        //save tags
-        foreach ($data->tags as $tag)
-            ArtworkTag::create(['artwork_id' => $artwork->id, 'tag_id' => $tag]);
+        $tags = $data->input('tags',[]);
+        $artwork->tags()->sync($tags);
 
         $artwork->styles()->delete();
         //save styles

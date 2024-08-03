@@ -5,6 +5,7 @@ use App\Models\Blog;
 
 use App\Models\Tag;
 
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class BlogRepository implements BlogRepositoryInterface
@@ -40,6 +41,8 @@ class BlogRepository implements BlogRepositoryInterface
             'title_english' => $data->input('title_english'),
             'content_persian' => $data->input('content_persian'),
             'content_english' => $data->input('content_english'),
+            'slug_persian' => Str::slug($data->input('title_persian'), '-'),
+            'slug_english' => Str::slug($data->input('title_english'), '-'),
         ]);
 
         $tags = $data->input('tags',[]);
@@ -74,6 +77,10 @@ class BlogRepository implements BlogRepositoryInterface
         ]);
 
         $blog->update($validatedData);
+        $blog->update([
+            'slug_persian' => Str::slug($data->input('title_persian'), '-'),
+            'slug_english' => Str::slug($data->input('title_english'), '-'),
+        ]);
 
         $tags = $data->input('tags',[]);
         $blog->tags()->sync($tags);
