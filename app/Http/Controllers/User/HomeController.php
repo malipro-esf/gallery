@@ -23,8 +23,11 @@ class HomeController extends Controller
         return view('user.pages.about');
     }
 
-    public function singleBlog(Blog $blog)
+    public function singleBlog($slug)
     {
+        $blog = Blog::with('comments','images','tags')->where('slug_english', $slug)
+            ->orWhere('slug_persian', $slug)->first();
+
         return view('user.blog.show', compact('blog'));
     }
 

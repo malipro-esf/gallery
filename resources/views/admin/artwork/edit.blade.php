@@ -192,7 +192,9 @@
                                     <label for="tags">{{__('titles.tags')}}</label>
                                     <select class=" form-control" multiple="multiple" name="tags[]" id="tags">
                                         @foreach($tags as $tag)
-                                            <option  {{in_array($tag->id,$artTags)?'selected':""}} value="{{$tag->id}}">{{$locale=='fa'?$tag->name_persian:$tag->name_english}}</option>
+                                            <option value="{{ $tag->id }}" {{ $artwork->tags->contains($tag->id) ? 'selected' : '' }}>
+                                                {{ $tag->name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>

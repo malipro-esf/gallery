@@ -7,6 +7,15 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="{{route('artwork.index')}}" class="btn btn-primary text-white">{{__('titles.list')}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @include('error-validation')
                     @include('success-message')
                     <h4 class="card-title">{{__('titles.create')}}</h4>
