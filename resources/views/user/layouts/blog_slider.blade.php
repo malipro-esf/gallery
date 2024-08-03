@@ -10,7 +10,7 @@
         <div class="row">
             <div class="active-exibition-carusel">
                 @foreach($blogs as $blog)
-                    <div class="single-exibition item" id="single-blog">
+                    <div class="single-exibition item" >
                         <a href="{{route('single.blog',['blog' => $blog->id])}}">
                             <img src="{{asset('images/blogs/'.$blog->images->first()->url)}}" alt="{{$blog->title()}}">
                         </a>
@@ -19,8 +19,8 @@
                                 <li><a href="#">{{$tag->name}}</a></li>
                             @endforeach
                         </ul>
-                        <a class="text-black" href="{{route('single.blog',['blog' => $blog->id])}}">
-                            <h3>{{$blog->title()}}</h3>
+                        <a class="text-black" href="{{route('single.blog',['blog' => $blog->title()])}}">
+                            <h3 class="fa-font">{{$blog->title()}}</h3>
                             <p>
                                 {!!$blog->shortDescription()!!}
                             </p>

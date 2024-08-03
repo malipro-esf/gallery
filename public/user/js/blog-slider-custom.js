@@ -1,9 +1,10 @@
 $(document).ready(function () {
     if ($('#last-blogs').text() != 'Last blogs') {
-
-        $('.single-exibition').addClass('pre-about-content');
+        $('.single-exibition h3').addClass('fa-font remove-before-content');
+        $('.single-exibition').addClass('persian-style text-justify');
     }
     else {
-        $('.single-exibition').css('text-align','left');
+        $('.single-exibition').removeClass('persian-style');
+        $('.single-exibition').addClass('dir-ltr');
     }
 });
