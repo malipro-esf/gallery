@@ -56,6 +56,9 @@
 #few-words::before {
     content: '';
 }
+.text-justify {
+    text-align: justify;
+}
 
 #start-about::before {
     content: '';
@@ -69,4 +72,9 @@
 .dir-ltr{
     direction: ltr;
 }
-
+.remove-before-content::before {
+    content: '';
+}
+.single-exibition a:hover {
+    color: #000;
+}

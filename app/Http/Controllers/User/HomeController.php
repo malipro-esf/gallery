@@ -26,9 +26,6 @@ class HomeController extends Controller
     public function singleBlog(Blog $blog)
     {
         return view('user.blog.show', compact('blog'));
-
     }
-
-
 
 }
