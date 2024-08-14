@@ -34,7 +34,7 @@
                     <li class="menu-active"><a href="{{url('/')}}">{{__('titles.home')}}</a></li>
                     <li><a href="gallery.html">{{__('titles.artworks')}}</a></li>
                     <li><a href="gallery.html">{{__('titles.wall murals')}}</a></li>
-                    <li><a href="blog-home.html">{{__('titles.blog')}}</a></li>
+                    <li><a href="{{route('blogs')}}">{{__('titles.blog')}}</a></li>
                     <li><a href="{{route('about.mary')}}">{{__('titles.about mary')}}</a></li>
                     <li><a href="{{route('contact.me')}}">{{__('titles.contact me')}}</a></li>
                 </ul>

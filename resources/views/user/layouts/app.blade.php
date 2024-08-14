@@ -3,6 +3,7 @@
 <head>
     <meta name="description" content="Paintings by Maryam Kondori | آثار تابلویی و دیواری مریم کندری">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
@@ -18,6 +19,7 @@
     <!-- Site Title -->
     <title>@yield('title', 'Mary Art')</title>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
     CSS
@@ -61,6 +63,8 @@
 <script src="{{asset('user/js/vendor/bootstrap.min.js')}}"></script>
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <script src="{{asset('user/js/easing.min.js')}}"></script>
 <script src="{{asset('user/js/hoverIntent.js')}}"></script>
 <script src="{{asset('user/js/superfish.min.js')}}"></script>

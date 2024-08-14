@@ -54,5 +54,11 @@ return [
     'Something went wrong' => 'Something went wrong, please try again later.',
 
     //newsletter
-    'your email submitted' => ''
+    'your email submitted' => '',
+
+    'thanks liked' => 'Thank you for your like',
+    'already liked' => 'You have already liked!',
+    'error failed' => 'Something went wrong, please try again later.',
+    'thanks comment' => 'Thanks your comment. Your message will be shown after review.',
+    'status changed' => 'Status was changed successfully.',
 ];

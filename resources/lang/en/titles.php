@@ -148,5 +148,16 @@ return [
     'english content' => 'English Content',
     'persian content' => 'Persian Content',
     'id' => 'Id',
-    'last blogs' => 'Last blogs'
+    'last blogs' => 'Last blogs',
+    'likes' => 'Likes',
+    'blogs' => 'Blogs',
+    'leave reply' => 'Leave a Reply',
+    'enter message' => 'Enter message',
+    'reply' => 'Reply',
+    'verified' => 'Verified',
+    'unverified' => 'Unverified',
+    'recent_blogs' => 'Recent Blogs',
+    'search_blogs' => 'Search Blogs',
+
+
 ];

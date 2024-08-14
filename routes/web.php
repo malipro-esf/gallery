@@ -47,7 +47,10 @@ Route::Post('newsletter' , [NewsLetterController::class]);
 
 Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set.locale');
 
-Route::get('blog/{slug}', [HomeController::class, 'singleBlog'])->name('single.blog');
+Route::get('blog/{slug}', [\App\Http\Controllers\User\BlogController::class, 'singleBlog'])->name('single.blog');
+Route::get('blogs', [\App\Http\Controllers\User\BlogController::class, 'index'])->name('blogs');
+Route::Post('add-to-like', [\App\Http\Controllers\User\BlogController::class, 'addToLikes'])->name('add.to.like');
+Route::Post('add-comment-blog', [\App\Http\Controllers\User\BlogController::class, 'addComment'])->name('add.blog.comment');
 
 Route::get('/login', function (){
     return view('auth.login');
@@ -83,6 +86,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin' ], function () {
     Route::get('set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('admin.set.locale');
     Route::get('contact/index', [ContactController::class, 'index'])->name('contact.index');
     Route::post('contact/reply', [ContactController::class, 'reply'])->name('contact.reply');
+    Route::post('comment/change-status', [CommentController::class, 'changeStatus'])->name('comment.change.status');
+
     //Route::get('send-new-artwork-email',[SendNewArtworkEmailController::class,'send'])->name('send.new.art.email');
 
 });

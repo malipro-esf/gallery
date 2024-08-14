@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +26,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <title>Painting @yield('title') </title>
 </head>
 
@@ -131,6 +135,9 @@
 <script src="{{asset('admin/template/assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{asset('admin/template/assets/libs/select2/dist/js/select2.min.js')}}"></script>
 <script src="{{asset('admin/template/dist/js/pages/forms/select2/select2.init.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 <!-- my js files -->
 <script src="{{asset('admin/js/adminJs.js')}}"></script>
