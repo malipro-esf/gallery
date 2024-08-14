@@ -10,6 +10,7 @@
         <div class="row">
             <div class="active-exibition-carusel">
                 @foreach($blogs as $blog)
+{{--                    @dd($blog->slug())--}}
                     <div class="single-exibition item" >
                         <a href="{{route('single.blog',['slug' => $blog->slug()])}}">
                             <img src="{{asset('images/blogs/'.$blog->images->first()->url)}}" alt="{{$blog->title()}}">

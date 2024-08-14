@@ -9,6 +9,8 @@ interface CommentRepositoryInterface
 
     public function store($data);
 
-    public function changeStatus(Comment $comment, $status);
+    public function update($data, Comment $comment);
+
+    public function changeStatus($data);
 
 }

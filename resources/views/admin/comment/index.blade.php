@@ -17,7 +17,7 @@
                     <table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe" data-tablesaw-sortable data-tablesaw-sortable-switch data-tablesaw-minimap data-tablesaw-mode-switch>
                         <thead>
                         <tr class="text-center">
-                            <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">{{__('titles.artwork')}}</th>
+                            <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">{{__('titles.model')}}</th>
                             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">{{__('titles.user name')}}</th>
                             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">{{__('titles.email address')}}</th>
                             <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">{{__('titles.ip address')}}</th>
@@ -29,18 +29,19 @@
                         <tbody>
                         @foreach($comments as $comment)
                         <tr class="text-center">
-                            <td class="p-value-col">{{$locale=='fa'?$comment->artwork->name_persian:$comment->artwork->name_english}}</td>
-                            <td class="e-value-col">{{$comment->user_name}}</td>
+                            <td class="p-value-col">{{class_basename($comment->commentable_type)}}</td>
+                            <td class="e-value-col">{{$comment->user_fullname}}</td>
                             <td class="e-value-col">{{$comment->email}}</td>
                             <td class="e-value-col">{{$comment->ip_address}}</td>
-                            <td class="e-value-col">{{$comment->agent_system}}</td>
-                            <td class="e-value-col">{{$comment->verification_status}}</td>
+                            <td class="e-value-col">{{$comment->user_agent}}</td>
+                            <td class="e-value-col"><button onclick="changeStatus(this, {{$comment->id}}, {{$comment->verification_status}})" class="btn btn-small {{$comment->verification_status?'btn-success':'btn-warning'}}">
+                                    {{$comment->verification_status?__('titles.verified'):__('titles.unverified')}}</button></td>
                             <td>
-                                <a href="#" data-id="{{$comment->id}}" onclick="showModal(this)">
-                                    <i class="fa fa-edit"></i>
+                                <a href="#" data-id="{{$comment->id}}" onclick="showModal(this, '{{$comment->comment}}', '{{$comment->reply}}')">
+                                    <i class="fa fa-eye"></i>
                                 </a>
 
-                                <form action="{{ route('tag.destroy', ['tag' => $comment->id]) }}" method="post" style="display: inline;">
+                                <form action="{{ route('comment.destroy', ['comment' => $comment->id]) }}" method="post" style="display: inline;">
                                     {{ csrf_field() }}
                                     {{ method_field('delete') }}
                                     <a type="submit" onclick="getDeleteConfirmation(this)"  data-toggle="tooltip"
@@ -67,16 +68,14 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
+                        <div class="form-group">
+                        <textarea id="message" class="form-control"></textarea>
                         <form action="" id="edit-form" method="post">
                             {{method_field('put')}}
                             @csrf
                             <div class="form-group">
-                                <label for="edit-persian-name" class="control-label">{{__('titles.persian name')}}</label>
-                                <input type="text" class="form-control" name="name_persian" id="edit-persian-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-english-name" class="control-label">{{__('titles.english name')}}</label>
-                                <input type="text" class="form-control" name="name_english" id="edit-english-name">
+                                <label for="edit-persian-name" class="control-label">{{__('titles.reply')}}</label>
+                                <textarea class="form-control" name="reply" id="reply"></textarea>
                             </div>
                         </form>
                     </div>
@@ -92,21 +91,66 @@
 @endsection
 @section('script')
     <script>
-        function showModal(el) {
-            const persianName = $(el).parent().parent().find('.p-value-col').html();
-            const englishName = $(el).parent().parent().find('.e-value-col').html();
-            const tagId = $(el).attr('data-id');
-
-            $('#edit-persian-name').val(persianName);
-            $('#edit-english-name').val(englishName);
+        function showModal(el, message, reply) {
+            $('#message').val(message)
+            const commentID = $(el).attr('data-id');
 
             //set action form
-            var url = '{{ route("tag.update", ":tag") }}';
-            url = url.replace(':tag',tagId);
+            var url = '{{ route("comment.update", ":comment") }}';
+            url = url.replace(':comment',commentID);
             $('#edit-form').attr('action', url);
-
+            $('#reply').text(reply);
 
             $('#edit-modal').modal('show');
         }
+
+        function changeStatus(el, commentId, status) {
+
+            let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+            let formData = new FormData;
+            formData.append('_token', CSRF_TOKEN);
+            formData.append('commentId', commentId );
+            formData.append('status', status );
+            $.ajax({
+                url: '{{route('comment.change.status')}}', // form action url
+                type: 'POST', // form submit method get/post
+                processData: false,
+                contentType: false,
+                data: formData,
+                error: function (errors) {
+                    if (errors.status == 401) {
+                        toastr.info('Your access is limited', '', 'error')
+                    }
+                    if (errors.status == 500) {
+                        toastr.info('An error occurred on the server side', '', 'error')
+                    }
+                    if (errors.status == 404) {
+                        toastr.info('User not found', '', 'error')
+                    }
+                },
+                success: function (data) {
+                    if(data) {
+                        // Display an info toast with no title
+                        toastr.info('{{__('messages.status changed')}}')
+                        if(status){
+                            $(el).addClass('btn-warning')
+                            $(el).removeClass('btn-success')
+                            $(el).text('{{__('titles.unverified')}}')
+                        }
+                        else  {
+                            $(el).removeClass('btn-warning')
+                            $(el).addClass('btn-success')
+                            $(el).text('{{__('titles.verified')}}')
+
+                        }
+
+                    } else
+                        toastr.info('{{__('messages.error failed')}}')
+
+                },
+            });
+
+        }
+
     </script>
 @endsection

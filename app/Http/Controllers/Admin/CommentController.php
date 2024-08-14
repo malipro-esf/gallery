@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Repositories\CommentRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,10 @@ class CommentController extends Controller
         return view('admin.comment.index', compact('comments'));
     }
 
+    public function changeStatus(Request $request)
+    {
+        return $this->repository->changeStatus($request);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -38,38 +43,16 @@ class CommentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comment $comment)
     {
-        //
+        return $this->repository->update($request, $comment);
+
     }
 
     /**

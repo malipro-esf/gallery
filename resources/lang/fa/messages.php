@@ -60,6 +60,12 @@ return [
     'Something went wrong' => 'خظایی رخ داده است. لطفا دوباره تلاش کنید',
 
     //newsletter
-    'your email submitted' => 'Your email has been successfully registered, and new updates and content will be sent to you.'
+    'your email submitted' => 'Your email has been successfully registered, and new updates and content will be sent to you.',
+
+    'thanks liked' => 'ممنون بخاطر لایک کردن',
+    'already liked' => 'تو قبلا لایک کردی!',
+    'error failed' => 'خطایی رخ داد، دوباره تلاش کنید',
+    'thanks comment' => 'ممنون بخاطر دیدگاه. پیام شما بعد از تایید نمایش داده خواهد شد.',
+    'status changed' => 'وضعیت با موفقیت تغییر کرد.'
 
 ];

@@ -78,3 +78,40 @@
 .single-exibition a:hover {
     color: #000;
 }
+.persian-single-blog {
+    direction: rtl;
+    text-align: justify;
+    font-family: 'Iranian Sans', sans-serif;
+}
+.liked {
+    color: red;
+}
+.dis-non {
+    display: none;
+}
+.img-post {
+    max-width: 100%;
+    max-height: 100%;
+}
+.m-r-20 {
+    margin-right: 20px;
+}
+.m-l-20 {
+    margin-left: 20px;
+}
+
+.single-recent-post {
+    display: flex;
+    flex-direction: row; /* Ensures children are arranged in a row */
+}
+
+.recent-thumb, .recent-details {
+    flex: 1; /* Ensures both divs take up equal space */
+    padding: 10px; /* Optional: Add some padding for better spacing */
+}
+
+.recent-thumb img {
+    width: 100%; /* Ensures the image fills the container */
+    height: auto; /* Maintains aspect ratio of the image */
+    display: block; /* Removes bottom space/line caused by images */
+}

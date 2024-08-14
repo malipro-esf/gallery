@@ -79,8 +79,8 @@ return [
     'tags' => 'تگ ها',
     'tag' => 'تگ',
     'create-list' => 'لیست-ثبت',
-    'comment' => 'نظر',
-    'comments' => 'نظرات',
+    'comment' => 'دیدگاه',
+    'comments' => 'دیدگاه',
     'artwork' => 'اثر هنری',
     'artworks' => 'آثار هنری',
     'user name' => 'نام کاربر',
@@ -152,5 +152,15 @@ return [
     'english content' => 'محتوای انگلیسی',
     'persian content' => 'محتوای فارسی',
     'id' => 'آیدی',
-    'last blogs' => 'آخرین مطالب'
+    'last blogs' => 'آخرین مطالب',
+    'likes' => 'پسند',
+    'blogs' => 'مطالب',
+    'leave reply' => 'دیدگاه خود را بنویسید',
+    'enter message' => 'پیام خود را بنویسید',
+    'reply' => 'پاسخ',
+    'verified' => 'تایید شده',
+    'unverified' => 'تایید نشده',
+    'recent_blogs' => 'مطالب اخیر',
+    'search_blogs' => 'جستجوی پست ها',
+
 ];

@@ -28,6 +28,11 @@ class Blog extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
+    public function likes()
+    {
+        return $this->morphMany(Like::class,'likeable');
+    }
+
     public function shortDescription()
     {
         $content = session()->get('locale') == 'en' ? $this->content_english : $this->content_persian;
