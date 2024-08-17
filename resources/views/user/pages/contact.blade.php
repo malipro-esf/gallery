@@ -77,6 +77,8 @@
                 $('#subject').css('direction','ltr')
                 $('#message').css('direction','ltr')
             }
+
+            $('#loader').css('display', 'none');
         })
 
         $('.btn-refresh').click(function(){

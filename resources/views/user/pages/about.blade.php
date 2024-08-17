@@ -63,5 +63,7 @@
             console.log('en')
         }
 
+        $('#loader').css('display', 'none');
+
     </script>
 @endsection

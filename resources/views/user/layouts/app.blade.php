@@ -33,9 +33,29 @@
     <link rel="stylesheet" href="{{asset('user/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('user/css/loader.css')}}">
 </head>
 <body>
 @include('user.layouts.header')
+<div class="loader" id="loader">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
     <div class="overlay overlay-bg"></div>
