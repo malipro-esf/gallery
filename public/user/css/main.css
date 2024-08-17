@@ -2649,7 +2649,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
     padding-top: 100px;
-    background-color: #fff;
+    background-color: #FAFAFA;
 }
 
 .footer-area h6 {
@@ -3146,7 +3146,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     color: #88d200;
 }
 
-.single-post h1 {
+.single-post h2 {
     margin-top: 20px;
     margin-bottom: 20px;
 }

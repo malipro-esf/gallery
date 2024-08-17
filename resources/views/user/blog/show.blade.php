@@ -2,17 +2,13 @@
 @section('title', $blog->title())
 @section('content')
     <!-- Start blog-posts Area -->
+
     <section class="blog-posts-area section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 post-list blog-post-list">
                     <div class="single-post">
                         <img class="img-fluid" src="{{asset('images/blog/'.$blog->images->first()->url)}}" alt="">
-{{--                        <ul class="tags">--}}
-{{--                            <li><a href="#">Art</a></li>--}}
-{{--                            <li><a href="#">Technology</a></li>--}}
-{{--                            <li><a href="#">Fashion</a></li>--}}
-{{--                        </ul>--}}
                         <a href="#">
                             <h1>
                               {{$blog->title()}}
@@ -169,7 +165,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var locale = localStorage.getItem('locale');
-        // alert(locale)
+
         if (locale) {
             if (locale === 'persian') {
                 $('p').css('line-height', '1.5rem');
@@ -197,6 +193,8 @@
                 $('#div-recent').removeClass( 'm-r-20');
 
             }
+
+            $('#loader').css('display', 'none');
         }
     });
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\Like;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use function App\Helpers\getDeviceAndOSInfo;
@@ -14,27 +15,31 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
+        $tags = Tag::all();
+
         if($request->search_blog) {
             if (session()->get('locale')=='en')
                 $field = 'title_english';
             else
                 $field = 'title_persian';
 
-            $blogs = Blog::where($field, 'LIKE', '%' . $request->search_blog . '%')->get();
+            $blogs = Blog::where($field, 'LIKE', '%' . $request->search_blog . '%')->with('tags')->get();
         }
         elseif ($request->tag){
             if (session()->get('locale')=='en')
                 $field = 'name_english';
             else
                 $field = 'name_persian';
+
             $blogs = Blog::with('tags')->whereHas('tags', function ($query) use ($request, $field) {
                $query->where($field,$request->tag);
-            })->get();
+            })->with('tags')->get();
+
         }
         else
-            $blogs = Blog::all();
+            $blogs = Blog::with('tags')->get();
 
-        return view('user.blog.index', compact('blogs'));
+        return view('user.blog.index', compact('blogs','tags'));
     }
 
     public function singleBlog($slug)

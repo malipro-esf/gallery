@@ -13,7 +13,9 @@
                 <div class="menu-content pb-70 col-lg-8">
                     <div class="title text-center">
                         <h1 class="mb-10 text-white">{{__('titles.artworks')}}</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+                        <p>
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -26,4 +28,16 @@
     </section>
     <!-- End gallery Area -->
 
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function(){
+            var delayInMilliseconds = 2000; //1 second
+
+            setTimeout(function() {
+                $('#loader').css('display', 'none');
+
+            }, delayInMilliseconds);
+        });
+    </script>
 @endsection

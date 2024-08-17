@@ -115,3 +115,6 @@
     height: auto; /* Maintains aspect ratio of the image */
     display: block; /* Removes bottom space/line caused by images */
 }
+.lnr-heart:hover {
+    cursor: pointer;
+}
