@@ -12,6 +12,7 @@ class Artwork extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'display_priority',
         'name_persian',
         'name_english',
         'slug_english',

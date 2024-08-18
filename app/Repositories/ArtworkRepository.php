@@ -16,7 +16,8 @@ class ArtworkRepository implements ArtworkRepositoryInterface
 {
     public function getAll($data = null)
     {
-        return Artwork::with('images', 'styles', 'techniques')->paginate(15);
+        return Artwork::with('images', 'styles', 'techniques')->orderBy('created_at', 'desc')
+            ->paginate(15);
     }
 
     public function create()

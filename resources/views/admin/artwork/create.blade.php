@@ -176,12 +176,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="styles">{{__('titles.display_priority')}}</label>
+                                    <input type="number" value="1" class="form-control" name="display_priority">
+
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row p-t-20">
 
                         </div>
 
-                        <div class="row p-t-20">
+                        <div class="row p-t-20 l-red">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label >{{__('titles.attributes')}}</label>
@@ -208,7 +217,7 @@
                             </div>
                         </div>
 
-                        <div class="row p-t-20 l-red">
+                        <div class="row p-t-20 ">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="des-persian">{{__('titles.persian description')}}</label>

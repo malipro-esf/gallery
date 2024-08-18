@@ -13,7 +13,9 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $artworks = Artwork::with('images')->get();
+        $artworks = Artwork::with('images')->orderBy('display_priority','desc')
+            ->get();
+
         $blogs = Blog::with('images','tags')->latest()->get();
         return view('user.index' , compact('artworks','blogs'));
     }

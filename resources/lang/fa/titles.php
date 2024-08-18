@@ -162,5 +162,6 @@ return [
     'unverified' => 'تایید نشده',
     'recent_blogs' => 'مطالب اخیر',
     'search_blogs' => 'جستجوی پست ها',
+    'display_priority' => 'اولویت نمایش',
 
 ];

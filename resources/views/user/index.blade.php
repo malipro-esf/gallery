@@ -21,7 +21,8 @@
             </div>
             <div id="grid-container" class="row">
                 @foreach($artworks as $art )
-                    <a class="single-gallery" href="#"><img class="grid-item" src="{{asset('images/artworks/'.$art->images[0]->url)}}"></a>
+                    <a class="single-gallery" href="#">
+                        <img class="grid-item" src="{{asset('images/artworks/'.$art->images[0]->url)}}"></a>
                 @endforeach
             </div>
         </div>
