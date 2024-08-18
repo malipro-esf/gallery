@@ -172,6 +172,16 @@
                         <div class="row p-t-20">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="styles">{{__('titles.display_priority')}}</label>
+                                    <input type="number" value="{{$artwork->display_priority}}" class="form-control" name="display_priority">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label for="attrs">{{__('titles.attributes')}}</label>
                                     @foreach($attributes as $attr)
                                         <div>

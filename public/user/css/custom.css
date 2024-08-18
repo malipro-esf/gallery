@@ -118,3 +118,25 @@
 .lnr-heart:hover {
     cursor: pointer;
 }
+.single-gallery {
+    flex: 1 1 25%;  !important;
+    box-sizing: border-box; !important;
+    padding: 15px; !important;
+}
+.grid-item {
+    width: 100%; !important;
+    height: auto; !important;
+    display: block; !important;
+    object-fit: cover; !important;
+}
+@media (max-width: 768px) {
+    .single-gallery {
+        flex: 1 1 50%; /* 2 items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .single-gallery {
+        flex: 1 1 100%; /* 1 item per row on very small screens */
+    }
+}

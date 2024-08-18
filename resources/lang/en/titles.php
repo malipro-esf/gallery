@@ -96,6 +96,7 @@ return [
     'unknown' => 'Unknown',
     'mural' => 'Mural',
     'panel' => 'Panel Painting',
+    'panel painting' => 'Panel Painting',
     'rials price' => 'Rials Price',
     'usd price' => 'USD Price',
     'enter price in usd' => 'Enter price in USD',
@@ -158,6 +159,6 @@ return [
     'unverified' => 'Unverified',
     'recent_blogs' => 'Recent Blogs',
     'search_blogs' => 'Search Blogs',
-
+    'display_priority' => 'Display Priority',
 
 ];
